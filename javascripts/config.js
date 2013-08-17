@@ -69,7 +69,8 @@
 			$(this).children("ul").toggle();
 		});
 		$("#l-slider li a").click(function(e){
-			e.preventDefault()
+			e.preventDefault();
+			e.stopPropagation();
 
 			var articleLink = $(this).attr('href');
 
@@ -84,6 +85,7 @@
 						var absoluteSrc = url.substring(0,url.lastIndexOf("/")+1)+reletiveSrc ; 
 						$(this).attr("src",absoluteSrc);
 					});
+					$("#l-content-body article").empty();
 					$("#l-content-body article").append($html);
 				}
 			});							
