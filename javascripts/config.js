@@ -66,7 +66,7 @@
 	$(function(){
 		$(docList).appendTo($("#l-slider"));	
 		$("#l-slider li").click(function(){
-			$(this).children().toggle();
+			$(this).children("ul").toggle();
 		});
 		$("#l-slider li a").click(function(e){
 			e.preventDefault()
