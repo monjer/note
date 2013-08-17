@@ -83,7 +83,7 @@
 
 					$("#l-content-body article").empty();
 
-					$("#l-content-body article").append($html);
+					$("#l-content-body article").append(data);
 
 					$("#l-content-body article img").each(function(){
 						var reletiveSrc = $(this).attr('src');						
