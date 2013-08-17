@@ -18,7 +18,7 @@
 					nodes:[{
 						name:"flash_builder_设置默认启动的浏览器",
 						isLeaf:true,
-						href:"./blog/2013-8/flash_builder_设置默认启动的浏览器.html"
+						href:"./blog/2013-8/1/flash_builder_设置默认启动的浏览器.html"
 					}]
 				},{
 					name:'Javascript/HTML/CSS',
