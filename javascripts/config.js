@@ -80,13 +80,16 @@
 				url:url,
 				dataType:"html",
 				success:function(data , statusText ,xhx){
-					var $html = $(data).find('img').each(function(){
+					
+					$("#l-content-body article").empty();
+
+					$("#l-content-body article").append($html);
+
+					$("#l-content-body article").find('img').each(function(){
 						var reletiveSrc = $(this).attr('src');						
 						var absoluteSrc = url.substring(0,url.lastIndexOf("/")+1)+reletiveSrc ; 
 						$(this).attr("src",absoluteSrc);
 					});
-					$("#l-content-body article").empty();
-					$("#l-content-body article").append($html);
 				}
 			});							
 		});
