@@ -73,12 +73,20 @@
 
 			var articleLink = $(this).attr('href');
 
-			var href = base+articleLink ;
+			var url = base+articleLink ;
 
-			location.href = href ;
-
-			$("#l-content-body article").load(articleLink);		
-			
+			$.ajax({
+				url:url,
+				dataType:"html",
+				success:function(data , statusText ,xhx){
+					var $html = $(data).find('img').each(function(){
+						var reletiveSrc = $(this).attr('src');						
+						var absoluteSrc = url.substring(0,url.lastIndexOf("/")+1)+reletiveSrc ; 
+						$(this).attr("src",absoluteSrc);
+					});
+					$("#l-content-body article").append($html);
+				}
+			});							
 		});
 	});
 	
