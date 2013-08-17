@@ -1,5 +1,5 @@
 (function(){
-
+	var base = "http://manjun-han.github.io/blog/" ;
 	var root = {
 				name:"root",
 				isLeaf:false ,
@@ -70,7 +70,12 @@
 		});
 		$("#l-slider li a").click(function(e){
 			e.preventDefault()
+
 			var articleLink = $(this).attr('href');
+
+			var href = base+articleLink ;
+
+			location.href = href ;
 
 			$("#l-content-body article").load(articleLink);		
 			
