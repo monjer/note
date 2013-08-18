@@ -71,11 +71,16 @@
 	}	
 
 	var docList = getHTMLStringFromConfigObject(root);
+
 	$(function(){
+		
 		$(docList).appendTo($("#l-slider"));	
+
 		$("#l-slider li").click(function(){
+			e.stopPropagation();
 			$(this).children("ul").toggle();
 		});
+
 		$("#l-slider li a").click(function(e){
 			e.preventDefault();
 			e.stopPropagation();
