@@ -1,7 +1,6 @@
+<h3>UIWebView的一些用法总结</h3>
 
-<h5>UIWebView的一些用法总结</h5>
-
-<h5>设置背景透明</h5>
+<h4>设置背景透明</h4>
 
 <ul>
 <li><p>设置webview的<strong>backgroundColor</strong>属性为<strong>[UIColor clearColor]</strong>;</p>
@@ -21,7 +20,7 @@
 </ul>
 
 
-<h5>加载本地HTML页面</h5>
+<h4>加载本地HTML页面</h4>
 
 <ol>
 <li><p>方式一</p>
@@ -55,7 +54,7 @@
 </ol>
 
 
-<h5>移除滚动后的外边阴影</h5>
+<h4>移除滚动后的外边阴影</h4>
 
 <p>UIWebView包含一个scrollView组件，用来将关联web内容实现滚动效果，页面滚动后的UIWebView的面板周围会出现阴影效果，该效果是在四周添加UIImageView实现的，因此移除这种阴影效果的代码如下：</p>
 
@@ -71,7 +70,7 @@
 
 <p>参见<a href="http://stackoverflow.com/questions/1074320/remove-uiwebview-shadow">Remove UIWebView Shadow?</a></p>
 
-<h5>在Safari中打开链接地址</h5>
+<h4>在Safari中打开链接地址</h4>
 
 <p>默认情况下，长按web页面中的链接,系统会自动呼出菜单提供open，copy和cancel选项，但如果要实现触击链接跳转至safari中打开页面该怎么做呢？UIWebViewDelegate协议中，包含</p>
 
@@ -212,7 +211,7 @@ invokeObjc(url);
 
 <p>前面提到的native代码调用js代码的实现方式，结合两种实现方式即完成了js与native代码间的简单的通信操作。</p>
 
-<h5>让UIWebView更加接近native</h5>
+<h4>让UIWebView更加接近native</h4>
 
 <p>某些情况下，我们既想要UIWebView加载web页面，又想使得所加载的页面的外观和操作行为更加接近native感觉。这时需要使用一些CSS样式来达到这些效果，这些CSS只适用于IOS中的Safari。</p>
 
@@ -252,5 +251,6 @@ invokeObjc(url);
   }
 </code></pre></li>
 </ul>
-<p>参见<a href="https://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#/apple_ref/doc/uid/TP30001266-SW1">Apple CSS Reference</a></p>
 
+
+<p>参见<a href="https://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#/apple_ref/doc/uid/TP30001266-SW1">Apple CSS Reference</a></p>

@@ -1,7 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:14px "STHeiti";
   color:#777;
   font-weight:300;
 }
@@ -10,33 +9,27 @@ h1, h2, h3, h4, h5, h6 {
   color:#222;
   margin:0 0 20px;
 }
-
 p, ul, ol, table, pre, dl {
   margin:0 0 20px;
 }
-
-h1, h2, h3 {
-  line-height:1.1;
-}
-
-h1 {
-  font-size:28px;
-}
-
 h2 {
   color:#393939;
 }
-
 h3, h4, h5, h6 {
   color:#494949;
 }
-
+h1,h2,h3,h4,h5,h6
+{
+  line-height: 1.2em;
+}
+p,li{
+  line-height: 1.5em;
+}
 a {
   color:#39c;
   font-weight:400;
   text-decoration:none;
 }
-
 a small {
   font-size:11px;
   color:#777;
@@ -104,15 +97,12 @@ hr {
   margin:0 0 20px;
 }
 /**** layout **/
-#l-doc {
-
+#l-doc {  
   maring-left:100px;
 }
 
 #l-header {
   width:100%;
-  /*float:left;
-  position:fixed;*/
 }
 
 #l-main-body {
@@ -138,9 +128,11 @@ hr {
 }
 
 #l-main-body #l-content-body{
-  float: left;
-  width: 600px;
-  margin-left: 20px;
+  /*float: left;*/
+  /*width: 600px;
+  margin-left: 20px;*/
+  padding-left: 250px;
+  min-width: 600px;
 }
 
 #l-footer {
