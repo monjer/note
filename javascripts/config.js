@@ -76,7 +76,7 @@
 		
 		$(docList).appendTo($("#l-slider"));	
 
-		$("#l-slider li").click(function(){
+		$("#l-slider li").click(function(e){
 			e.stopPropagation();
 			$(this).children("ul").toggle();
 		});
