@@ -1,6 +1,6 @@
-#####UIWebView的一些用法总结
+###UIWebView的一些用法总结
 
-#####设置背景透明
+####设置背景透明
 
 + 设置webview的**backgroundColor**属性为**[UIColor clearColor]**;
 	
@@ -17,7 +17,7 @@
 		webView.opaque = NO;
 		
 				
-#####加载本地HTML页面
+####加载本地HTML页面
 
 1. 方式一
 		
@@ -49,7 +49,7 @@
     	[webView loadRequest:[NSURLRequest requestWithURL:localHTMLPageFileURL]];
     	
 	    
-#####移除滚动后的外边阴影
+####移除滚动后的外边阴影
 
 UIWebView包含一个scrollView组件，用来将关联web内容实现滚动效果，页面滚动后的UIWebView的面板周围会出现阴影效果，该效果是在四周添加UIImageView实现的，因此移除这种阴影效果的代码如下：
 		
@@ -65,7 +65,7 @@ UIWebView包含一个scrollView组件，用来将关联web内容实现滚动效�
 参见[Remove UIWebView Shadow?](http://stackoverflow.com/questions/1074320/remove-uiwebview-shadow)
 
 
-#####在Safari中打开链接地址
+####在Safari中打开链接地址
 
 默认情况下，长按web页面中的链接,系统会自动呼出菜单提供open，copy和cancel选项，但如果要实现触击链接跳转至safari中打开页面该怎么做呢？UIWebViewDelegate协议中，包含
 
@@ -195,7 +195,7 @@ UIWebView提供
 前面提到的native代码调用js代码的实现方式，结合两种实现方式即完成了js与native代码间的简单的通信操作。
 
 
-#####让UIWebView更加接近native
+####让UIWebView更加接近native
 
 某些情况下，我们既想要UIWebView加载web页面，又想使得所加载的页面的外观和操作行为更加接近native感觉。这时需要使用一些CSS样式来达到这些效果，这些CSS只适用于IOS中的Safari。
 
