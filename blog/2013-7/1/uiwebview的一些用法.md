@@ -2,17 +2,17 @@
 
 ####设置背景透明
 
-+ 设置webview的**backgroundColor**属性为**[UIColor clearColor]**;
++ 设置webview的 **backgroundColor** 属性为 **[UIColor clearColor]**;
 	
 		webView.backgroundColor = [UIColor clearColor];
 	
-+ 为webview中的HTML页面的**body**标签添加CSS背景样式设置
++ 为webview中的HTML页面的 **body**标签添加CSS背景样式设置
 
 		<body style="background-color: transparent">
 			...
 		</body>
 
-+ 设置webview的**opaque**属性值为**NO**
++ 设置webview的 **opaque**属性值为 **NO**
 
 		webView.opaque = NO;
 		
