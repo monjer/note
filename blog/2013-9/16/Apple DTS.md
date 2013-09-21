@@ -74,7 +74,7 @@
 
 + **Safari Developer Program**
 
-	现有 99$ 2次及 249$ 5次两种DTS购买方式。Safari Developer Program 的会员可以从 []Member Center](https://developer.apple.com/membercenter/index.action#techSupport)下面的“Programs & Add-ons”（程序和附加组件）标签购买 DTS服务。
+	现有 99$ 2次及 249$ 5次两种DTS购买方式。Safari Developer Program 的会员可以从 [Member Center](https://developer.apple.com/membercenter/index.action#techSupport)下面的“Programs & Add-ons”（程序和附加组件）标签购买 DTS服务。
 	
 + **MFi Program**
 
