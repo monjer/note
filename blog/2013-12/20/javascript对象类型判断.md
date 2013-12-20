@@ -106,6 +106,10 @@ javascript语言环境中提供了一些标准的内建对象类型，其中`Obj
 
 	var obj = new Object();
 	obj.toString(); // return [object Object]
+Ecmascript5.1版本的规范中对于Object.prototype.toString的描述如下
+>15.2.4.2 Object.prototype.toString ( )
+>>	When the toString method is called, the following steps are taken:>	>	1. If the this value is undefined, return "[object Undefined]".
+>>	2. If the this value is null, return "[object Null]".>>	3. Let O be the result of calling ToObject passing the this value as the argument.>>   4. Let class be the value of the [[Class]] internal property of O.>>   5. Return the String value that is the result of concatenating the three Strings "[object ", >class, and "]".
 
 因此只要自定义类型没有重写其原型对象中的`toString()`方法，或着派生自`Object`的对象没有重写`toString()`方法，那么调用对象本身的`toString()`方法可以正确获得其类型描述。如对于内建类型:
 
@@ -172,7 +176,7 @@ javascript语言环境中提供了一些标准的内建对象类型，其中`Obj
 
 这样相对于`typeof`来说，使用`toString`方法来判断不但能区分变量是否是对象类型，甚至可以判断对象的是数组，日期，正则表达式,还是函数。
 
->Ecmascript5.1版本的规范中,`toString`上调用`call`方法，并将`this`参数设置为`null`或`undefined`调用后，分别返回`'null'`和`'undefined'`。
+
 
 #####3.jQuery.type()的实现
 
