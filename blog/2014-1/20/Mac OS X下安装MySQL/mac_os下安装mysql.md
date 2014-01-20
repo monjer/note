@@ -19,7 +19,7 @@
 
 默认情况下MySQL的 Mac OS X 的pkg会安装到`/usr/local/mysql-VAERSION`的目录下,并且还会添加一个路径为`/usr/local/mysql`的链接来指向以上的原始安装目录。安装完毕后，安装包会执行`mysql_install_db`在MySQL数据库中创建授权表。
 	
-![mysql positions][6]
+![installing][6]
 	
 Mac OS X下MySQL的安装目录布局与tar文件二进制分发版本类似；所有MySQL的二进制代码位于`/usr/local/bin`中，MySQL的套接字文件位于`/tmp/mysql.sock`。
 	
@@ -247,7 +247,9 @@ Unix中，在选定安装位置(通常是`/usr/local/mysql`)解压并安装tar�
 [3]: 2.png
 [4]: 3.png
 [5]: 4.png
-[6]: 5.png	
+
+[6]: 5.png
+
 [7]: 6.png
 [8]: 7.png
 [9]: 9.png
