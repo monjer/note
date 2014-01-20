@@ -1,103 +1,102 @@
- ######MAC OS X中安装MySQL
+####MAC OS X中安装MySQL
 
-1. 下载并安装MySQL
+#####1.下载并安装MySQL
 
-    MAC OS X 10.2.x(Jaguar)以及以上版本的Mac OS X使用二进制安装包pkg格式来代替二进制分发版来安装MySQL，首先下载MySQL的[安装文件][1](.dmg),本机Mac OS X版本为64位的10.8.5，选择的Mac OS X 10.7 (x86, 64-bit), DMG Archive的MySQL。
+   MAC OS X 10.2.x(Jaguar)以及以上版本的Mac OS X使用二进制安装包pkg格式来代替二进制分发版来安装MySQL，首先下载MySQL的[安装文件][1](.dmg),本机Mac OS X版本为64位的10.8.5，选择的Mac OS X 10.7 (x86, 64-bit), DMG Archive的MySQL。
 	
-   ![Download dmg][2]
-	
-	下载完成后双击打开.dmg镜像文件可以看到MySQL的pkg安装包
-	
-	![find pkg][3]
-	
-	双击安装包，选择安装文件的默认设置，一步步进行安装
-	
-	![start installe][4]
-	![installing][5]
-	
-2. 查看MySQL的安装目录
+![Download dmg][2]
 
-	默认情况下MySQL的 Mac OS X 的pkg会安装到`/usr/local/mysql-VAERSION`的目录下,并且还会添加一个路径为`/usr/local/mysql`的链接来指向以上的原始安装目录。安装完毕后，安装包会执行`mysql_install_db`在MySQL数据库中创建授权表。
-	
-	
-	![mysql positions][6]
-	
-	Mac OS X下MySQL的安装目录布局与tar文件二进制分发版本类似；所有MySQL的二进制代码位于`/usr/local/bin`中，MySQL的套接字文件位于`/tmp/mysql.sock`。
-	
-	Unix中，在选定安装位置(通常是`/usr/local/mysql`)解压并安装tar文件二进制分发并在该目录下创建以下目录:
+下载完成后双击打开.dmg镜像文件可以看到MySQL的pkg安装包
 
-	<table border="1" cellpadding="0" id="table4">
-			<tbody><tr>
-				<td width="128">
-				<p><strong><span>目录</span></strong></p></td>
-				<td width="285">
-				<p><strong><span>目录内容</span></strong></p></td>
-			</tr>
-			<tr>
-				<td width="128">
-				<p>
-				<span>bin</span></p></td>
-				<td width="285">
-				<p>客户端程序和<strong><span>mysqld</span></strong>服务器</p></td>
-			</tr>
-			<tr>
-				<td width="128">
-				<p>
-				<span>data</span></p></td>
-				<td width="285">
-				<p>日志文件，数据库</p></td>
-			</tr>
-			<tr>
-				<td width="128">
-				<p>
-				<span>docs</span></p></td>
-				<td width="285">
-				<p>文档，<span>ChangeLog</span></p></td>
-			</tr>
-			<tr>
-				<td width="128">
-				<p>
-				<span>include</span></p></td>
-				<td width="285">
-				<p>包含<span>(</span>头<span>)</span>文件</p></td>
-			</tr>
-			<tr>
-				<td width="128">
-				<p>
-				<span>lib</span></p></td>
-				<td width="285">
-				<p>库</p></td>
-			</tr>
-			<tr>
-				<td width="128">
-				<p>
-				<span>scripts</span></p></td>
-				<td width="285">
-				<p><strong>
-				<span>mysql_install_db</span></strong></p></td>
-			</tr>
-			<tr>
-				<td width="128">
-				<p>
-				<span>share/mysql</span></p></td>
-				<td width="285">
-				<p>错误消息文件</p></td>
-			</tr>
-			<tr>
-				<td width="128">
-				<p>
-				<span>sql-bench</span></p></td>
-				<td width="285">
-				<p>基准程序</p></td>
-			</tr>
-		</tbody></table>
+![find pkg][3]
+
+双击安装包，选择安装文件的默认设置，一步步进行安装
+
+![start installe][4]
+![installing][5]
+	
+#####2.查看MySQL的安装目录
+
+默认情况下MySQL的 Mac OS X 的pkg会安装到`/usr/local/mysql-VAERSION`的目录下,并且还会添加一个路径为`/usr/local/mysql`的链接来指向以上的原始安装目录。安装完毕后，安装包会执行`mysql_install_db`在MySQL数据库中创建授权表。
+	
+![mysql positions][6]
+	
+Mac OS X下MySQL的安装目录布局与tar文件二进制分发版本类似；所有MySQL的二进制代码位于`/usr/local/bin`中，MySQL的套接字文件位于`/tmp/mysql.sock`。
+	
+Unix中，在选定安装位置(通常是`/usr/local/mysql`)解压并安装tar文件二进制分发并在该目录下创建以下目录:
+
+<table border="0" cellpadding="0" id="table4">
+		<tbody><tr>
+			<td width="128">
+			<p><strong><span>目录</span></strong></p></td>
+			<td width="285">
+			<p><strong><span>目录内容</span></strong></p></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<p>
+			<span>bin</span></p></td>
+			<td width="285">
+			<p>客户端程序和<strong><span>mysqld</span></strong>服务器</p></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<p>
+			<span>data</span></p></td>
+			<td width="285">
+			<p>日志文件，数据库</p></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<p>
+			<span>docs</span></p></td>
+			<td width="285">
+			<p>文档，<span>ChangeLog</span></p></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<p>
+			<span>include</span></p></td>
+			<td width="285">
+			<p>包含<span>(</span>头<span>)</span>文件</p></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<p>
+			<span>lib</span></p></td>
+			<td width="285">
+			<p>库</p></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<p>
+			<span>scripts</span></p></td>
+			<td width="285">
+			<p><strong>
+			<span>mysql_install_db</span></strong></p></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<p>
+			<span>share/mysql</span></p></td>
+			<td width="285">
+			<p>错误消息文件</p></td>
+		</tr>
+		<tr>
+			<td width="128">
+			<p>
+			<span>sql-bench</span></p></td>
+			<td width="285">
+			<p>基准程序</p></td>
+		</tr>
+	</tbody></table>
 		
-	对比下，Ma OS X下MySQL的安装目录下的文件结构	
+对比下，Ma OS X下MySQL的安装目录下的文件结构	
 	
-	![Mysql dir][7]	
+![Mysql dir][7]	
 	
-	目录说明如下:
-	 <table summary="MySQL Installation Layout on Mac OS X" border="1">
+目录说明如下:
+<table summary="MySQL Installation Layout on Mac OS X" border="0">
  	<caption>MySQL Installation Layout on Mac OS X</caption>
     <colgroup>
     <col />
@@ -161,39 +160,39 @@
    </tbody>
   </table>
 
-	>Mac OS X默认会向用户隐藏一些系统的目录和文件，需要在终端运行以下两条命令将系统所有被隐藏掉的目录或文件显示
-	>
-	> 		shell> defaults write com.apple.finder AppleShowAllFiles -bool true
-	>   	
-	> 		shell> KillAll Finder
+>Mac OS X默认会向用户隐藏一些系统的目录和文件，需要在终端运行以下两条命令将系统所有被隐藏掉的目录或文件显示
+>
+> 		shell> defaults write com.apple.finder AppleShowAllFiles -bool true
+>   	
+> 		shell> KillAll Finder
 
-3. 启动MySQL
+#####3.启动MySQL
 
-	1. 使用`MySQL Startup Item`设置系统启动时自动开启MySQL
+1. 使用`MySQL Startup Item`设置系统启动时自动开启MySQL
 	
-		在MySQL5.1中`MySQL Startup Item`是Mac OS X下安装镜像的一部分，是一个独立的安装包。
-	   
-	   ![MySQL Startup Item][8]
+	在MySQL5.1中`MySQL Startup Item`是Mac OS X下安装镜像的一部分，是一个独立的安装包。
+   
+    ![MySQL Startup Item][8]
 
-	   	双击`MySQL Startup Item`的图标进行安装,按步骤选择默认安装设置，直至安装成功
-	   	
-	   ![MySQL Startup Item][13]		
-	   
-	   MySQL5.1及以后的`MySQL Startup Item`安装在`/Library/StartupItems/MySQLCOM`.(4.1.2z之前版本的MySQL安装在`/Library/StartupItems/MySQL`)。
+   	双击`MySQL Startup Item`的图标进行安装,按步骤选择默认安装设置，直至安装成功
+   	
+    ![MySQL Startup Item][13]		
+   
+    MySQL5.1及以后的`MySQL Startup Item`安装在`/Library/StartupItems/MySQLCOM`.(4.1.2z之前版本的MySQL安装在`/Library/StartupItems/MySQL`)。
 	
-	   ![MySQL Startup Item dir][9]
+	![MySQL Startup Item dir][9]
 		
-	   `MySQLStartupItem`安装时在系统配置文件`/etc/hostconfig`中添加了变量`MySQLCOM=-YES-`,想要禁用MySQL的自动启动，只需要将变量改为`MySQLCOM=-NO-`。
+	`MySQLStartupItem`安装时在系统配置文件`/etc/hostconfig`中添加了变量`MySQLCOM=-YES-`,想要禁用MySQL的自动启动，只需要将变量改为`MySQLCOM=-NO-`。
 		
-	   ![MySQL Startup Item dir][10]
+	![MySQL Startup Item dir][10]
 		
-	   安装完毕后可以在终端运行以下命令来启动MySQL(当前用户需要有管理员权限，必要时还要输入当前用户密码)
+	安装完毕后可以在终端运行以下命令来启动MySQL(当前用户需要有管理员权限，必要时还要输入当前用户密码)
 
-           shell> sudo /Library/StartupItems/MySQLCOM/MySQLCOM start
+		shell> sudo /Library/StartupItems/MySQLCOM/MySQLCOM start
               
-       命令执行完毕后，终端显示提示:
+    命令执行完毕后，终端显示提示:
        
-           Starting MySQL database server      
+        Starting MySQL database server      
 	       
 	   >MySQLStartupItem只需安装一次！不需要在以后每次升级MySQL软件包时都重新安装。
 	   >
@@ -201,17 +200,18 @@
 	   >
 	   >     shell> sudo /Library/StartupItems/MySQLCOM/MySQLCOM stop
 
-	2. 使用命令
+2. 使用命令
 		
-		输入以下命令序列(必要时要输入当前用户密码)
-			
-			shell> cd /usr/local/mysql
-			shell> sudo ./bin/mysqld_safe
-			shell> bg
+	输入以下命令序列(必要时要输入当前用户密码)
 		
-		MySQL成功启动后，可以通过Mac OS X的活动监视器查看MySQL的后台进程
-		
-		![mysql connect][14]
+		shell> cd /usr/local/mysql
+		shell> sudo ./bin/mysqld_safe
+		shell> bg
+	
+	MySQL成功启动后，可以通过Mac OS X的活动监视器查看MySQL的后台进程
+	
+	![mysql connect][14]
+
 4. 连接MySQL		
 
 	在命令行中输入以下命令，连接MySQL
@@ -226,16 +226,16 @@
 	
    1. 建立别名		
 		
-     	  shell> alias mysql=/usr/local/mysql/bin/mysql
-          shell> alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+			shell> alias mysql=/usr/local/mysql/bin/mysql
+        	shell> alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 			
    2. 导出到PATH环境变量中
 	
-	      shell> export PATH=/usr/local/mysql/bin:$PATH
+	    	shell> export PATH=/usr/local/mysql/bin:$PATH
 
    		之后在终端中直接输入以下命令便可快速连接MySQL
 
-	 	  shell> mysql
+	 		shell> mysql
 	
       ![mysql fast connect][12]
 
