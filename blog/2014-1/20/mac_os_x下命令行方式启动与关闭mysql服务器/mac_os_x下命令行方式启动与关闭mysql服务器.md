@@ -61,7 +61,7 @@ MySQL的默认安装路径为`/usr/local/mysql`,以`shell`代替通用命令解�
 
 3. 调用**mysql.server**脚本启动MySQL服务器
 
-	Unix中的MySQL的分发版中包含了**mysql.server**脚本，可用于使用`System V-style`运行目录来启动和停止系统服务器的系统，可以用于MySQL的Mac OS X Startup Item
+	Unix中的MySQL的分发版中包含了**mysql.server**脚本，可用于使用`System V-style`运行目录来启动和停止系统服务器的系统，可以用于MySQL的Mac OS X Startup Item。
 Unix下**mysql.server**位于MySQL安装目录的下的`support-files`目录中，命令如下
 
 		shell> cd /usr/local/mysql/support-files/
@@ -99,3 +99,7 @@ Unix下**mysql.server**位于MySQL安装目录的下的`support-files`目录中�
 		Shutting down MySQL
 		. SUCCESS!  
 		shell> 
+		
+####参考
++ [mysqld命令行选项,5.1版](http://dev.mysql.com/doc/refman/5.1/zh/database-administration.html#server-options) 
++ [mysqld`--user`命令行选项,5.6版](http://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_user)
