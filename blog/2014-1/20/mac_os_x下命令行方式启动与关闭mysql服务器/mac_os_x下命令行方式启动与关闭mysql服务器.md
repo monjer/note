@@ -4,7 +4,7 @@ Mac OS X10.2及以上版本的系统使用二进制安装软件包pkg格式来�
 
 MySQL的默认安装路径为`/usr/local/mysql`,以`shell`代替通用命令解释程序，即终端提示符，记录如下:
 
-####启动MySQL服务器
+####1. 启动MySQL服务器
 
 1. 使用**mysqld_safe服务器启动脚本**
 	
@@ -70,7 +70,7 @@ Unix下**mysql.server**位于MySQL安装目录的下的`support-files`目录中�
 		. SUCCESS! 
 		shell> 
 
-####关闭MySQL服务器
+####2. 关闭MySQL服务器
 
 1. 使用**mysqladmin管理工具**关闭mysql服务器
 	
