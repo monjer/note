@@ -4,7 +4,7 @@
 
 mailto链接是HTML页面链接的一种，在HTML页面中通过点击一个mailto链接，可以打开用户计算机中默认的mail客户端程序，用网站中指定邮件地址发送邮件。网页中的mailto链接使用的是[mailto协议][1]，该协议注册于IANA，定义了[SMTP][2]邮件地址的协议格式。
 
-HTML页面中的mailto链接依赖于用户计算机中提前安装的邮件客户端，比如Window系统下的Outlook，伙食Mac OS X下的邮件应用
+HTML页面中的mailto链接依赖于用户计算机中提前安装的邮件客户端，比如Window系统下的Outlook，或Mac OS X下的邮件应用
 
 ####HTML中使用mailto链接
 
