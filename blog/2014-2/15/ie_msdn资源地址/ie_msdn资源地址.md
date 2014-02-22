@@ -32,6 +32,10 @@
 + [Selector API](11)
 + [IE8中CSS的强化内容 - CSS Improvements in Windows Internet Explorer 8](13)
 
+####JavaScript
+
++ [JavaScript Language Reference](http://msdn.microsoft.com/en-us/library/ie/s4esdbwz(v=vs.85).aspx)
++ [JavaScript Version Information](http://msdn.microsoft.com/en-us/library/ie/s4esdbwz(v=vs.85).aspx)
 
 [1]: http://msdn.microsoft.com/en-us/library/cc288325(v=vs.85).aspx
 [2]: http://msdn.microsoft.com/en-us/library/gg699338(v=vs.85).aspx
