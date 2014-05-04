@@ -2,9 +2,9 @@
 ####苹果专有的meta标签说明
 
 
-**名称**apple-mobile-web-app-capable
+**名称:** apple-mobile-web-app-capable
 
-**目的:**设置Web App是否运行在全屏模式下(full-screen mode)。
+**目的:** 设置Web App是否运行在全屏模式下(full-screen mode)。
 
 **语法:**
 
@@ -19,9 +19,9 @@
   
     
 
-**名称:**apple-mobile-web-app-status-bar-style
+**名称:** apple-mobile-web-app-status-bar-style
 
-**目的:**设置Web Application设置状态栏(status bar)的样式。
+**目的:** 设置Web Application设置状态栏(status bar)的样式。
 
 **语法:**
 
@@ -33,9 +33,9 @@
   
 
 
-**名称:**format-detection
+**名称:** format-detection
 
-**目的:**启用或禁用IOS Safari下web页面中电话号码的自动检测。
+**目的:** 启用或禁用IOS Safari下web页面中电话号码的自动检测。
 
 **语法:**
 
@@ -46,9 +46,9 @@
 >IOS中的Safari默认会检测任何格式类似于电话号码的字符串，并将其作为一个直接拨号link。设置telephone=no会禁用该功能。
 
 
-**名称:**viewport
+**名称:** viewport
 
-**目的:**在IOS下，改变展示页面使用的逻辑窗口大小。
+**目的:** 在IOS下，改变展示页面使用的逻辑窗口大小。
 
 **语法:**
 
@@ -60,7 +60,7 @@
 
 >例如，如果webpage的宽度小于980px，可以设置viewport的大小来适配网页内容。设计IOS专有的web application，需要将其宽度设置为设备宽度。
 
->**表-1**描述了viewport meta支持的关键字和默认值。在viewport meta中设置多属性时，需要使用逗号分隔的赋值列表。规则如下：
+>**表-1** 描述了viewport meta支持的关键字和默认值。在viewport meta中设置多属性时，需要使用逗号分隔的赋值列表。规则如下：
 >
 >* 不要使用分号作为分隔符。
 >* 空格也可以作为分隔符使用，但逗号优先。
