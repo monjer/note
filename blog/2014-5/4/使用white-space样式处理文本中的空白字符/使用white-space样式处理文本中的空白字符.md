@@ -112,6 +112,7 @@ CSS的`white-space`属性的作用是控制元素内部文本中包含所包含�
 ![white-space](1.png)
 
 >为了说明结果，以上截图的示例代码做了点简单的样式。
+
 #### 参考
 [MDN CSS white-space](https://developer.mozilla.org/en-US/docs/Web/CSS/white-space)
 
