@@ -2,7 +2,7 @@
 ####苹果专有的meta标签说明
 
 
-**名称:**apple-mobile-web-app-capable
+**名称**apple-mobile-web-app-capable
 
 **目的:**设置Web App是否运行在全屏模式下(full-screen mode)。
 
