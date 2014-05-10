@@ -5,7 +5,7 @@
 IOS6及之前，引导用户跳转到App Stroe的评价页面的代码如下，
 	
 	#define rateBaseLink  @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" ;
-	#define AppID xxxx
+	#define AppID @"xxxxx"
 
 	NSString *rateAppURLString = [reviewAppBaseURL stringByAppendingString:AppID];     
 
