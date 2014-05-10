@@ -33,7 +33,7 @@ IOS6及之前，引导用户跳转到App Stroe的评价页面的代码如下，
 	#define  IS_IOS7 (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1 ? false : true)
 	#define rateBaseLink_IOS6  @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" ;
 	#define rateBaseLink_IOS7  @"itms-apps://itunes.apple.com/app/id" ;
-	#define AppID xxxx
+	#define AppID @"xxxx"
 
 
 	NSString *rateAppURLString = [rateBaseLink_IOS6 stringByAppendingString:AppID];     
