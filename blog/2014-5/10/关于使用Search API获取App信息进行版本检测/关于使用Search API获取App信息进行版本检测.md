@@ -31,7 +31,7 @@
 
 	https://itunes.apple.com/lookup?id=App_ID
 
-其中`App_ID`指的就是程序创建时的`App ID`。App的描述信息是以JSON格式返回的，其中一项就是的应用程序的`Version`，这样我们可以拿到这个远程的`Version`描述与之前拿到的本地的`Version`描述进行比较，以获取是否由新版本的程序发布，以下是实现代码片段
+其中`App_ID`指的就是程序创建时的`Apple ID`。App的描述信息是以JSON格式返回的，其中一项就是的应用程序的`Version`，这样我们可以拿到这个远程的`Version`描述与之前拿到的本地的`Version`描述进行比较，以获取是否由新版本的程序发布，以下是实现代码片段
 
 	// 定义版本检测后的回调
 	// newVersion 是否有新版本
@@ -43,7 +43,7 @@
 	// Search API的基准链接
 	static const NSString *iTunesAppSearchAPILookUpBaseURL = @"https://itunes.apple.com/lookup?id=" ;
 
-	// App ID值
+	// Apple ID值
 	#define APPID @"XXXXX"
 
 	// 获取当前本地的Version
