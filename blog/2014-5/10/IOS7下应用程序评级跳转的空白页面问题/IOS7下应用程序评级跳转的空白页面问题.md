@@ -17,7 +17,7 @@ IOS6及之前，引导用户跳转到App Stroe的评价页面的代码如下，
 
 	itms-apps://itunes.apple.com/app/idAPP_ID
 
-其中链接地址最后的`APP_ID`代表的是应用程序的App ID。也就是以上的代码现在变为
+其中链接地址最后的`APP_ID`代表的是应用程序的Apple ID。也就是以上的代码现在变为
 
 	#define rateBaseLink  @"itms-apps://itunes.apple.com/app/id" ;
 	#define AppID xxxx
