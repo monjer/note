@@ -23,12 +23,15 @@
 
 	shell> sudo apachectl graceful
 	shell> Password:******	
-与`restart`参数不同的是，使用`graceful`选项重启Apache服务器，不会终端现有的连接。
+与`restart`参数不同的是，使用`graceful`选项重启Apache服务器，不会中断现有的连接。
+
 
 ####检查Apache配置文件的语法
 
 	shell> sudo apachectl configtest
 	shell> Password:******	
+	
+> apachectl graceful 等价于 apachectl -t	
 	
 配置正常，命令行输入
 
