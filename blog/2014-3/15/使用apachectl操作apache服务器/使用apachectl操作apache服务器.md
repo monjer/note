@@ -31,7 +31,7 @@
 	shell> sudo apachectl configtest
 	shell> Password:******	
 	
-> apachectl graceful 等价于 apachectl -t	
+> apachectl configtest 等价于 apachectl -t	
 	
 配置正常，命令行输入
 
