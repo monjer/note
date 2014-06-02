@@ -103,7 +103,7 @@
 
 >2. **如果1中的假设不存在，是否有某种在不删除“浏览器”的前提下，提供过滤网络的办法？**
 
->3. **像[Note plus](https://itunes.apple.com/cn/app/notes-plus/id374211477?mt=8)和[Notability](https://itunes.apple.com/cn/app/notability/id360593530?mt=8)这些应用是否提供了过滤网络的行为，它们有时如何在4+的前提下成功通过审核发布了自己的程序？**
+>3. **像[Note plus](https://itunes.apple.com/cn/app/notes-plus/id374211477?mt=8)和[Notability](https://itunes.apple.com/cn/app/notability/id360593530?mt=8)这些应用是否提供了过滤网络的行为，它们又是如何在4+的前提下成功通过审核发布了自己的程序？**
 
 帖子发出后陆续有国外的开发者给予了回复，而且还引发了我第四个疑问是：
 
