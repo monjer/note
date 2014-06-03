@@ -4,7 +4,7 @@
 
 	<Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
 
-`autoDeploy`设置为true时，Tomcat会定期对`appBase`或`xmlBase`指定的目录进行检测，实时保证部署到appBase下的新工程和添加到`xmlBase`目录中的context XML描述文件指向的新工程得到加载。当检测到变更后，Tomcat会重新启动(reload)。背后机制是Tomcat会启动一个自动部署检测进程来监视web application的变化。这种检测伴随着占用更多的cpu资源和内存资源，这在实际的生产环境中是一种资源的浪费，所以需要将自动部署检测关闭掉，设置`autoDeloy`标记为false即可，如
+`autoDeploy`设置为true时，Tomcat会定期对`appBase`或`xmlBase`指定的目录进行检测，实时保证部署到appBase下的新工程和添加到`xmlBase`目录中的context XML描述文件指向的新工程得到加载。当检测到变更后，Tomcat会自动部署新添加的Web Application。背后机制是Tomcat会启动一个自动部署检测进程来监视web application的变化。这种检测伴随着占用更多的cpu资源和内存资源，这在实际的生产环境中是一种资源的浪费，所以需要将自动部署检测关闭掉，设置`autoDeloy`标记为false即可，如
 
 	<Host appBase="webapps" autoDeploy="false" name="localhost" unpackWARs="true">
 	
