@@ -1,6 +1,6 @@
 ### 使用white-space样式处理文本中的空白字符
 
-CSS的`white-space`属性的作用是控制元素内部文本中所包含空白符号（空格，换行符）的处理方式以及文本的换行方式。适用于任何元素(all Elements),具有可继承性。
+CSS的`white-space`属性的作用是控制元素内部文本中所包含空白符号（空格，tabs，换行符）的处理方式以及文本的换行方式。适用于任何元素(all Elements),具有可继承性。
 可选值包括：
 
 + `white-space: normal`
