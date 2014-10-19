@@ -2,9 +2,9 @@
 
 ###Cocoapods的概念
 
-[Cocoapods](1)是Objective-C工程的第三方库的依赖管理工具，目前已经有许多Objective-C的第三方开源库可以通过Cocoapods来安装并导入到工程内。当项目工程过多依赖第三方库时，原始的做法是需要将第三方开源库的代码手工下载到本地，之后再import进我们的Xcode工程，有时还需要根据开源库所依赖的Objective-C的语言版本和语言规则，以及编译器的版本来进行代码级别的编译选项的配置。最常见的是在一个ARC工程中，使用一个非ARC的老的第三方开源库时，我们首先要导入其代码到我们的Xcode中后，之后需要逐条将每个oc文件在编译选项中进行设置。而且当多个第三方库导入后，也会增加我们项目工程的目录管理结构的复杂性。与此同时，一个第三方开源库总是在进行各种bug的修复以功能的完善，之后会有更多新的版本不断更新和对外发布，如果以依赖代码的形式来使用第三方库的话，那么当需要更新第三方库时，将会是一件十分痛苦的事情，我们需要重新替换文件，并重复各种配置。因此Cocoapods管理工具的出现就是为了解决这些问题。
+[Cocoapods][1]是Objective-C工程的第三方库的依赖管理工具，目前已经有许多Objective-C的第三方开源库可以通过Cocoapods来安装并导入到工程内。当项目工程过多依赖第三方库时，原始的做法是需要将第三方开源库的代码手工下载到本地，之后再import进我们的Xcode工程，有时还需要根据开源库所依赖的Objective-C的语言版本和语言规则，以及编译器的版本来进行代码级别的编译选项的配置。最常见的是在一个ARC工程中，使用一个非ARC的老的第三方开源库时，我们首先要导入其代码到我们的Xcode中后，之后需要逐条将每个oc文件在编译选项中进行设置。而且当多个第三方库导入后，也会增加我们项目工程的目录管理结构的复杂性。与此同时，一个第三方开源库总是在进行各种bug的修复以功能的完善，之后会有更多新的版本不断更新和对外发布，如果以依赖代码的形式来使用第三方库的话，那么当需要更新第三方库时，将会是一件十分痛苦的事情，我们需要重新替换文件，并重复各种配置。因此Cocoapods管理工具的出现就是为了解决这些问题。
 
-Cocoapods是基于ruby构建，Mac OS X系统下默认已经安装好了ruby的运行时，**gem**是ruby的开发工具包的一个标准，Cocoapods相当于一个ruby的开发工具包，当前存在一个流行的ruby开发包的托管服务工具叫做[RubyGems](2)，可以用其来托管和安装各种存在的ruby的开发工具包，当然也可以用来安装Cocoapods。默认高版本的ruby(1.9版本以后)下已经内建安装了[RubyGems](2)，因此我们可以直接使用。
+Cocoapods是基于ruby构建，Mac OS X系统下默认已经安装好了ruby的运行时，**gem**是ruby的开发工具包的一个标准，Cocoapods相当于一个ruby的开发工具包，当前存在一个流行的ruby开发包的托管服务工具叫做[RubyGems][2]，可以用其来托管和安装各种存在的ruby的开发工具包，当然也可以用来安装Cocoapods。默认高版本的ruby(1.9版本以后)下已经内建安装了[RubyGems][2]，因此我们可以直接使用。
 
 
 ###安装Cocoapods
@@ -38,13 +38,13 @@ Cocoapods是基于ruby构建，Mac OS X系统下默认已经安装好了ruby的�
 		],
 		"requires_arc": false
 		}
-更多关于**Specification**的介绍，参见[Podspec Syntax Reference](13).
+更多关于**Specification**的介绍，参见[Podspec Syntax Reference][13].
 
 ![cocoapods dir](1.png)
 
 ###使用Cocoapods
 
-Cocoapods依赖于一个名为`Podfile`的配置文件来管理我们Xcode工程所依赖的第三方库。更多关于`Podfile`文件的参数以及配置格式说明，参见官网[描述](9)。现在以名为`PlainPro`的空白工程为例，说明如何使用Cocoapods来安装并管理第三方库。
+Cocoapods依赖于一个名为`Podfile`的配置文件来管理我们Xcode工程所依赖的第三方库。更多关于`Podfile`文件的参数以及配置格式说明，参见官网[描述][9]。现在以名为`PlainPro`的空白工程为例，说明如何使用Cocoapods来安装并管理第三方库。
 
 1. 使用Xcode新建PlainPro工程
 
@@ -84,7 +84,7 @@ Cocoapods依赖于一个名为`Podfile`的配置文件来管理我们Xcode工程
 	
 ###安装AFNetworking
 
-以安装当前流行的[AFNetworking](11)框架为例，简单说明Cocoapods的依赖管理的使用。
+以安装当前流行的[AFNetworking][11]框架为例，简单说明Cocoapods的依赖管理的使用。
 
 在Xcode中，打开`Podfile`文件，在文件中添加以下配置,并保存
 
@@ -101,7 +101,7 @@ Cocoapods依赖于一个名为`Podfile`的配置文件来管理我们Xcode工程
 
 ![13.png](13.png)	
 
-以后类似的第三方库的添加过程参见AFnetworking的安装步骤即可。可以在[Cocoapods](1)的首页搜索框中来查看其支持的开源库。
+以后类似的第三方库的添加过程参见AFnetworking的安装步骤即可。可以在[Cocoapods][1]的首页搜索框中来查看其支持的开源库。
 
 ![14.png](14.png)	
 
@@ -115,18 +115,18 @@ Cocoapods依赖于一个名为`Podfile`的配置文件来管理我们Xcode工程
 	
 ###参考
 
-+ [CocoaPods](1)
-+ [Install CocoaPods on your computer](7)
-+ [Adding Pods to an Xcode project](8)
-+ [Podfile](9)
-+ [Cocoapods Command-line Reference](10)
-+ [Ruby Programmers Reference Guide](3)
-+ [BSD General Commands Manual](4)
-+ [About RubyGems](5)
-+ [Where is ruby stored on mac?](6)
-+ [AFNetworking](11)
-+ [RubyGems Guides](12)
-+ [Podspec Syntax Reference](13)
++ [CocoaPods][1]
++ [Install CocoaPods on your computer][7]
++ [Adding Pods to an Xcode project][8]
++ [Podfile][9]
++ [Cocoapods Command-line Reference][10]
++ [Ruby Programmers Reference Guide][3]
++ [BSD General Commands Manual][4]
++ [About RubyGems][5]
++ [Where is ruby stored on mac?][6]
++ [AFNetworking][11]
++ [RubyGems Guides][12]
++ [Podspec Syntax Reference][13]
 
 [1]: http://cocoapods.org/
 [2]: http://rubygems.org/
