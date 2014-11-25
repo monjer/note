@@ -110,8 +110,12 @@ Cocoapods依赖于一个名为`Podfile`的配置文件来管理我们Xcode工程
 ![pod search](15.png)
 
 以上。
+
+###更新Cocoapods
+
+
 	
-	
+###卸载Cocoapods	
 	
 ###参考
 
