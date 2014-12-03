@@ -22,6 +22,7 @@
 + 私有属性&&私有方法
 + 对象字面量(Literals)
 + 属性(Properties)和实例变量(Instance Variables)
++ 删除自动生成的代码模板
 
 
 
@@ -511,6 +512,37 @@ Xcode4.4中添加了对对象字面量的支持，以更加快捷的方式创建
 	    }
 	    return self;
 	}
+	
+### 删除自动生成的不必要的代码注释和模板
+
+使用Xcode的新建文件的功能，在继承Objective-C原生类，实现自定义的类时，Xcode在新的文件中会自动添加一些注释以及代码模板，如继承UIView时，`.m`文件中会自动添加`drawRect:`方法
+
+	/*
+	// Only override drawRect: if you perform custom drawing.
+	// An empty implementation adversely affects performance during animation.
+	- (void)drawRect:(CGRect)rect {
+	    // Drawing code
+	}
+	*/
+
+在继承UIViewController时会自动生成`-(void)prepareForSegue:sender:`方法
+
+	/*
+	#pragma mark - Navigation
+	
+	// In a storyboard-based application, you will often want to do a little preparation before navigation
+	- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	    // Get the new view controller using [segue destinationViewController].
+	    // Pass the selected object to the new view controller.
+	}
+	*/
+
+尤其是在继承UITableViewController时，会在`-m`文件中添加诸多`UITableViewDelegate`和`UITableViewDataSource`代理方法。
+
+但是，Xcode生成的新文件中，自动添加的英文注释以及代码模板并不是我们必须要使用的，所以根据具体情况，我们需要手工删除那些我们不需要的注释，以及不会实现的方法的代码模板或者片段，以保证代码整洁、清爽，增加代码的可阅读性。
+
+
+
 ### 参考
 
 
