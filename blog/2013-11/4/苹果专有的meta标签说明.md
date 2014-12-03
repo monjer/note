@@ -85,7 +85,7 @@
 >		<meta name = "viewport" content = "initial-scale = 2.3, user-scalable = no">
 >
 
-<table  border="0" cellspacing="0" cellpadding="5">
+<table  border="0" cellspacing="0" cellpadding="5" style="width:858px;">
 	<caption > <strong class="caption_number">表-1</strong>
 		&nbsp;&nbsp;Viewport属性
 	</caption>
