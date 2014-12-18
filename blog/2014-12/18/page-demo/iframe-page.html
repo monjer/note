@@ -69,7 +69,7 @@
 		<script type="text/javascript">
 			$(function(){
 				var parentWindow = window.parent; // main.html的window(窗口)
-				var parentDocument = window.ownerDocument; // main.html的document(文档)
+				var parentDocument = parentWindow.document; // main.html的document(文档)
 				//
 				// 为点赞的button添加一个click事件
 				// 这里面要获取你的数字，然后传递给你的父页面儿
