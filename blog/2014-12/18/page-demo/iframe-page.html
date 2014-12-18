@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			.title{
+				text-align: center;
+				color: #3498DB;
+				font-weight: normal;
+				font-size: 32px;
+			}
+			.box{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top:50%;
+				left:50%;				
+				margin-left: -100px;
+				margin-top: -100px;
+				border:none;				
+				font-size:15px;				
+				text-align: center;;			
+			}
+			#label{
+				padding-top: 20px;
+				padding-left: 5px;
+				color: #E74C3C;
+			}
+			#closeButton{
+				position: absolute;
+				top:0;
+				right: 0;
+				width: 28px;
+				height: 28px;			
+				text-align: center;
+				line-height: 28px;
+				cursor: pointer;
+
+			}
+			#closeButton:hover{
+				color: red;				
+			}
+			#appreciateButton{
+				margin-top:10px;
+				background-image: none;
+				border:1px solid lightgray;
+				background-color: white;				
+				padding: 10px 40px;
+				border-radius: 4px;
+				cursor: pointer;
+				font-size: 14px;
+				color: #34495E;
+			}
+			#appreciateButton:hover{
+				color:white;
+				background-color: #34495E;
+				border-color:#95A5A6;
+			}
+		</style>
+	</head>
+	<body>
+		<h4 class="title">iframe加载的页面</h4>
+		<div class="box">
+			<div>已赞<span id="label">10000</span></div>			
+			<button id="appreciateButton" title="为我加个赞">点赞+1</button>			
+		</div>
+		<div id="closeButton" title="点击关闭弹窗">X</div>
+		<script src="jquery.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var parentWindow = window.parent; // main.html的window(窗口)
+				var parentDocument = window.ownerDocument; // main.html的document(文档)
+				//
+				// 为点赞的button添加一个click事件
+				// 这里面要获取你的数字，然后传递给你的父页面儿
+				//
+				$("#appreciateButton").on("click" , function(){
+					// 获取label包含的数字
+					var number = $("#label").text();
+					number = Number(number)+1;// 点赞 +1，就是在现在的10000+1得出的数值
+					var $counterLabel = $("#counterLabel",parentDocument);
+					$counterLabel.text(number);
+					parentWindow.destroyIFrameWindow();
+				});
+
+				$("#closeButton").on("click",function(){
+					parentWindow.destroyIFrameWindow();
+				})
+			});
+		</script>
+	</body>
+</html>

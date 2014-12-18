@@ -1,0 +1,134 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript"></script>
+		<style type="text/css">	
+			*{
+				margin: 0px;
+				padding: 0px;
+			}	
+			body{
+				position: relative;
+				/*overflow: hidden;*/
+			}
+			.page-content{
+				height: 300px;				
+				border:1px solid #ababab;
+				text-align: center;
+				line-height: 300px;
+			}
+			.counter-panel{
+				height: 400px;
+				background-color: #3498DB;
+				color: white;
+				border: 1px solid #3498DB;
+			}
+			.counter-box{
+				text-align: center;
+				margin-top: 100px;
+			}
+			#counterLabel{
+				color: #F1C40F;
+				padding-left: 5px;
+			}
+			#createWindowButton{
+				margin-top:10px;
+				background-image: none;
+				border:1px solid lightgray;
+				background-color: white;				
+				padding: 10px 40px;
+				border-radius: 4px;
+				cursor: pointer;
+				font-size: 14px;
+
+			}
+			#createWindowButton:hover{
+				color:white;
+				background-color: #34495E;
+				border-color:#95A5A6;
+			}
+			.overlayer{
+				position: fixed;
+				top:0px;
+				right: 0px;
+				bottom: 0px;
+				left: 0px;
+				z-index: 1000;
+			}
+			#popPageIframe{		
+				background-color: white;	
+				border:none;
+				width: 800px;
+				height: 480px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -400px;
+				margin-top: -240px;
+			}
+			.popup-background-layer{
+				width: 100%;
+				height: 100%;
+				background-color: black;
+				opacity: 0.7;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">			
+			<div class="counter-panel">
+				<div class="counter-box">
+					<span>获得的赞:</span><strong id="counterLabel">10000</strong>
+					<div>
+						<button id="createWindowButton">我要点赞</button>
+					</div>
+				</div>
+			</div>
+			<div class="page-content">页面的其它模块</div>
+			<div class="page-content">页面的其它模块</div>
+			<div class="page-content">页面的其它模块</div>
+			<div class="page-content">页面的其它模块</div>
+			<div class="page-content">页面的其它模块</div>
+		</div>
+		
+		
+		<script src="jquery.js"></script>
+		<script type="text/javascript">
+
+			/**
+			 * 1.以$开头的变量都是jquery的包装过的变量
+			 * 2.每行代码都可以在行首添加用"//"添加"注释",被注释的代码语句将不被执行
+			 **/
+
+			// 添加iframe弹出窗口
+			// 
+			function showIframeWindow(){
+				var $body = $("body");
+				var windowString = '<div class="overlayer">'+
+										'<div class="popup-background-layer"></div>'+
+										'<iframe id="popPageIframe" src="iframe-page.html"></iframe>'+
+									'</div>';
+				var $iframeWindow  = $(windowString);
+				$body.append($iframeWindow);
+				// 为body去除滚动条，你可以加个"注释"看看不一样的效果
+				$body.css("overflow","hidden");
+			}
+			// 删除iframe弹出窗口
+			function destroyIFrameWindow(){
+				var $body = $("body");
+				// 为body找回滚动条，你可以加个"注释"看看不一样的效果
+				$body.css("overflow","auto");
+				var $iframeWindow = $(".overlayer");
+				$iframeWindow.remove();
+			}
+
+			$(function(){
+				$("#createWindowButton").on("click" , function(){
+					showIframeWindow();
+				});
+			});
+		</script>
+		
+	</body>
+</html>
