@@ -27,7 +27,7 @@ hit-tesing</em>过程，来决定哪个view来接受事件。这个过程起始�
 view ，并接受touch事件。每个参与该流程的view首先会检测事件是否发生在自己的边界内。只有检测成功后，这个view才会进一步将事件交由其subviews来继续进行hit-test检测。所以如果你的view在touch下面，但其自身
 定位超出其父view的边界，父view无法检测到事件位置，也不会将touch事件传递给你的view。
 
-解决办法之一是改变view层次结构的布局，以便你的view定位在其父view边界之内。如果因某些原因导致必须保持当前布局，你也通过可以改变其父view的hit-testing行为，以避免父view会忽略touch事件。可以通过
+解决办法之一是改变view层次结构的布局，以便你的view定位在其父view边界之内。如果因某些原因导致必须保持当前布局，你也可以通过改变其父view的hit-testing行为，以避免父view会忽略touch事件。可以通过
 覆盖父view的`-(UIView *)hitTest:withEvent: `方法来达到该效果,如下:
 
 覆盖父view类的hit-tesing方法
