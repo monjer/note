@@ -58,7 +58,7 @@ view ，并接受touch事件。每个参与该流程的view首先会检测事件
 
 为了维持view的可交互性，你要确保`userInteractionEnabled`属性设置为了`YES`,并且确保application不会忽略用户事件。
 
-如果你得view在动画期间没有收到touch事件，那是因为`UIView`的动画方法常常在动画执行期间禁用掉了touch事件。在执行`UIView`的动画时，恰当的配置'UIViewAnimationOptionAllowUserInteraction'选项
+如果你得view在动画期间没有收到touch事件，那是因为`UIView`的动画方法常常在动画执行期间禁用掉了touch事件。在执行`UIView`的动画时，恰当的配置`UIViewAnimationOptionAllowUserInteraction`选项
 来改变这个行为。
 
 ***
