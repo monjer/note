@@ -23,7 +23,7 @@
 <span style="color:#E74C3C"><em>Q:</em></span>我的view在屏幕上显示正确，但是无法接受touch事件.为什么？
 
 <span style="color:#E74C3C"><em>A:</em></span>该问题的常见起因是你的view定位在它父view边界之外。在应用接受到一个touch事件时，会发起一个<em>
-hit-tesing</em>过程，来决定哪个view来接受事件。这个过程起始于view层次结构的根，通常是指应用的window，并从前向后的顺序查找subviews，直到找到位于touch下面的最上层的view。这个view会编程hit-test 
+hit-tesing</em>过程，来决定哪个view来接受事件。这个过程起始于view层次结构的根，通常是指应用的window，并从前向后的顺序查找subviews，直到找到位于touch下面的最上层的view。这个view会成为hit-test 
 view ，并接受touch事件。每个参与该流程的view首先会检测事件是否发生在自己的边界内。只有检测成功后，这个view才会进一步将事件交由其subviews来继续进行hit-test检测。所以如果你的view在touch下面，但其自身
 定位超出其父view的边界，父view无法检测到事件位置，也不会将touch事件传递给你的view。
 
