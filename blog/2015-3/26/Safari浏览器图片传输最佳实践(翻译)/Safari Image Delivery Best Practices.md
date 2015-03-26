@@ -1,0 +1,1 @@
+[原文:Safari Image Delivery Best Practices](https://developer.apple.com/library/safari/documentation/NetworkingInternet/Conceptual/SafariImageDeliveryBestPractices/Introduction/Introduction.html#//apple_ref/doc/uid/TP40012449-CH1-SW1)
