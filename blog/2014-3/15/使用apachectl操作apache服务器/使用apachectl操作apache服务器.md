@@ -32,11 +32,32 @@
 	shell> Password:******	
 	
 > apachectl configtest 等价于 apachectl -t	
+
 	
-配置正常，命令行输入
+配置正常，命令行输出
 
 	Syntax OK
 	
+####查看编译的模块
+
+	shell > sudo apachectl -l
+	
+输出类似于
+
+	Compiled in modules:
+	  core.c
+	  prefork.c
+	  http_core.c
+	  mod_so.c
+####产看apache版本
+
+	shell> sudo apachectl -v
+	
+输出类似于
+
+	Server version: Apache/2.2.26 (Unix)
+	Server built:   Dec 10 2013 22:09:38	
+		
 其它一些参数更详细的说明参考Apache官网。
 	
 [1]: https://httpd.apache.org/docs/2.2/zh-cn/programs/httpd.html
