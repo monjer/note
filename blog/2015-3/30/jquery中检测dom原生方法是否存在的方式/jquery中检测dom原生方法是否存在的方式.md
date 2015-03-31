@@ -94,7 +94,7 @@ jQuery作为最流行的js框架，其最大的特征之一是:Cross Browser,很
 ###RegexObj.test(str)
 回到之前的正则表达式上来，js中对于一个正则表达式的`test`方法接受一个字符串参数，返回一个布尔值，检测该字符串是否与正则表达式匹配。所以执行对于`rnative.test( doc.getElementsByClassName );`等价于`rnative.test( doc.getElementsByClassName.toString());`。
 
-分解`rnative`的至多个字表达式：
+分解`rnative`的至多个子表达式：
 
 + `^[^{]+\`匹配除了`{`外的任何字符一到多次；
 + `\{\s*`匹配以`\{\s*`字符开始，以及任意空白符零次或多次;
