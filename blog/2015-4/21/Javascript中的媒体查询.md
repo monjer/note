@@ -8,7 +8,7 @@
 
 	var mediaQueryList = window.matchMedia("(orientation: landscape)");
 
-`MediaQueryList`类型的对象上又一个`matches`,它是一个布尔值类型，以检测当前的文档状态是否与传入的媒体查询(`mediaQueryString`)结果相匹配,`true`代表匹配，`false`则反之，如
+`MediaQueryList`类型的对象上存在一个名为`matches`的布尔类型的属性，以检测当前的文档状态是否与传入的媒体查询(`mediaQueryString`)结果相匹配,`true`代表匹配，`false`则反之，如
 
 		var mediaQueryList = window.matchMedia("(orientation: landscape)");
 		// 设备是横屏状态
