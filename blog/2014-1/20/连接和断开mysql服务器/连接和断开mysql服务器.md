@@ -148,7 +148,9 @@
 + [Connecting to the MySQL Server][1]
 + [Specifying Program Options][2]
 + [Invoking MySQL Programs][3]
++ [Using Options on the Command Line][4]
 
 [1]: http://dev.mysql.com/doc/refman/5.6/en/connecting.html
 [2]: http://dev.mysql.com/doc/refman/5.6/en/program-options.html
 [3]: http://dev.mysql.com/doc/refman/5.6/en/invoking-programs.html
+[4]: http://dev.mysql.com/doc/refman/5.6/en/command-line-options.html
