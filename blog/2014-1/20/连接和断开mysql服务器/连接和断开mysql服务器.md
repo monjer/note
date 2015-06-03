@@ -1,11 +1,37 @@
 ###连接和断开MySQL服务器
 
+客户端程序要连接到MySQL服务器的，它必须指定合适的连接参数，如mysql服务器的地址，用来连接的MySQL账户的用户名和相应的密码，以及连接的端口号。每个连接参数都有自己默认的值，但我们可以以选项options的形式来覆盖默认参数，不管是通过客户端命令行选项，还是选项文件中的指令行。
+
+以下示例以**mysql**客户端程序为例，进行说明，但所有的原则适用于其它客户端，如**mysqldump**,**mysqladmin**,**mysqlshow**.
+
 **mysql**是MySQL的命令行客户端程序或者叫做终端监视器，这是一个交互式的程序，通过**mysql**可以在操作系统提供的终端，通过命令行的方式连接到MySQL服务器上，完成对MySQL数据库服务器执行各种数据库的操作的任务。进行数据库操作的第一步是连接MySQL数据库服务器，操作完成后则要断开之前与MySQL服务器建立的链接。现对以命令行方式连接和断开MySQL数据库服务器的过程做简单的记录，本篇操作于Mac OS X下，MySQL服务器已正确的安装在本机，以`shell`指代终端命令行提示符。
+
+
 
 ####连接MySQL服务器
 
+要在命令行中使用**mysql**客户端，首先将当前命令行的路径切到mysql安装目录下的bin目录，在Unix下，路径是`/usr/local/mysql/bin`
 
-1. 基本连接
+1. 默认连接
+
+		shell> mysql
+		
+	以上连接命令未指定任何参数选项，连接会采用其默认
+	
+	+ 默认用户名是__localhost__
+	+ 默认用户名在windows下是__ODBC__，Unix下是当前登录系统的**用户名**
+	+ 省略连接密码
+	+ 对于**mysql**来说，第一个非选项的参数会被识别为默认连接的数据库名字，如果没有非选项参数，那么**mysql**不会连接默认数据库
+
+	>按照以上逻辑，假如当前Unix系统的登录名为`mjh`,那么以下的命令是等价的:
+	>	
+	>		shell> mysql -h localhost -u mjh
+	>		shell> mysql -h localhost
+	>		shell> mysql -u mjh
+	>		shell> mysql
+	>
+
+2. 基本连接
 
 	在使用**mysql**连接服务器时，需要指定如下几个基本选项：
 	+ MySQL服务器所运行的主机名称
@@ -58,18 +84,8 @@
 		
 	这种方式的好处是在命令行中隐藏了密码的显示，以确保密码的安全性。
 	
-	在连接服务器时，如果没有指定连接参数，那么**mysql客户端程序**会按以下规则提供参数的默认值:
-	+ 默认主机名是**localhost**。
-	+ 默认用户名在Windows中是**ODBC**,在Unix中是你的Unix**系统的登录名**。
-	+ 如果没有`-p`,则不提供密码。
 	
-	按照以上逻辑，假如当前Unix系统的登录名为`mjh`,那么以下的命令是等价的:
-	
-		shell> mysql -h localhost -u mjh
-		shell> mysql -h localhost
-		shell> mysql -u mjh
-		shell> mysql
-2. 指定连接端口
+3. 指定连接端口
 	
 	MySQL服务器的默认监听端口是`3306`，MySQL服务器安装时重新指定的新的端口号后，如`3000`，需要我们按照指定的端口进行连接,如下
 		
@@ -79,7 +95,7 @@
 		
 		shell> mysql -h localhos -u root -p123456 --port=3000
 	
-3. 指定连接后使用的数据库
+4. 指定连接后使用的数据库
 	
 	可以使用**mysql**指定在初始连接后使用的数据库，需要使用`-D`选项来指定数据库的名称,如我们要连接MySQL并使用`test`数据库，如
 		
@@ -126,3 +142,13 @@
 `Bye`说明已经成功断开了连接,而且注意到三种命令的方式后面既可以添加`;`结束符，也可忽略`;`。
 
 此外在诸如Mac OS X这样的Unix系统中，也可以在**mysql>**提示下直接使用快捷键`control+D`来断开服务器。
+
+###参考
+
++ [Connecting to the MySQL Server][1]
++ [Specifying Program Options][2]
++ [Invoking MySQL Programs][3]
+
+[1]: http://dev.mysql.com/doc/refman/5.6/en/connecting.html
+[2]: http://dev.mysql.com/doc/refman/5.6/en/program-options.html
+[3]: http://dev.mysql.com/doc/refman/5.6/en/invoking-programs.html
