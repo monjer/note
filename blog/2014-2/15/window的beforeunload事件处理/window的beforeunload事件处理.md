@@ -28,6 +28,13 @@
 		</body>
 	</html>
 	
+jQuery写法
+
+	$(windw).on("beforeunload",function($e){
+
+		return  '请确认保存数据' ;
+	});
+	
 页面加载完毕后，点击浏览器的刷新按钮，在Chrome下的执行结果如图：
 
 ![alter](1.png)
@@ -106,13 +113,13 @@
 + 调用[document.open](http://msdn.microsoft.com/en-us/library/ie/ms536652\(v=vs.85\).aspx)方法
 + 点击浏览器的回退，刷新或主页按钮
 
-对于其它浏览器的触发情况参见[各浏览器对 onbeforeunload 事件的支持与触发条件实现有差异](3)中的描述。
+对于其它浏览器的触发情况参见[各浏览器对 onbeforeunload 事件的支持与触发条件实现有差异][3]中的描述。
 
 ####参考
 
-+ [Window.onbeforeunload](1)
-+ [beforeunload | onbeforeunload event](2)
-+ [各浏览器对 onbeforeunload 事件的支持与触发条件实现有差异](3)
++ [Window.onbeforeunload][1]
++ [beforeunload | onbeforeunload event][2]
++ [各浏览器对 onbeforeunload 事件的支持与触发条件实现有差异][3]
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Window.onbeforeunload
 [2]: http://msdn.microsoft.com/en-us/library/ie/ms536907(v=vs.85).aspx
