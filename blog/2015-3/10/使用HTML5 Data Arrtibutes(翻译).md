@@ -40,7 +40,7 @@
 
 ####Javascript解析#2 jQuery的`data()`方法
 
-从**1.4.3**版本开始，jQuery的`data()`方法可以解析HTML5的data属性。你无需指明`data-`前缀，所以等价代码可以如下书写：
+从**1.4.3**版本开始，jQuery的`data()`方法可以解析HTML5的data属性。你<strong style="color:red">无需指明</strong>`data-`前缀，所以等价代码可以如下书写：
 
 	var msglist = $("#msglist");
  
