@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>至最爱的旭旭</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable = no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <style>
+        *{margin:0;padding:0;box-sizing: border-box;}
+        html,body{
+            font-size:14px;
+            line-height: 1.5;
+            width:100%;
+            height:100%;
+            background-color: white;
+            -webkit-font-smoothing:antialiased ;
+        }
+        body{
+            font-family: "Helvetica Neue",Helvetica,Helvetica,Arial,sans-serif;
+            padding:10px;
+            overflow-x: hidden;
+        }
+        #animate-code{
+            margin: 0 auto;;
+            white-space: nowrap;
+            width:600px;
+            padding-bottom:200px;
+        }
+        #animate-code p{
+            /*color:#0066CC;*/
+            letter-spacing: 1px;
+            paddin-left:2em;
+        }
+        #animate-code .lover{
+            color:red;
+            padding-bottom: 10px;
+        }
+        #animate-code .speak-love{
+            padding-top:5px;
+            color:red;
+            transition: all 0.2s;
+        }
+        #animate-code .post-end{
+            padding-left:50%;
+        }
+        #animate-code .me {
+            color:red;
+        }
+        #cursor{
+            position:fixed;
+        }
+        @media all and (max-width:780px){
+            #animate-code{
+                width: 100%;
+                padding-bottom: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>   </div>
+    <div id="animate-code">
+        <h3 class="lover">旭旭 :</h3>
+        <p>在一起,快一年的时间了</p>
+        <p>与你相处这一年的时光</p>
+        <p>是我人生中最开心快乐的日子</p>
+        <p>因为</p>
+        <p>在我人生这个尴尬的转角</p>
+        <p>还好,让我遇见了你</p>
+        <p>从此以后</p>
+        <p>我的生活变了</p>
+        <p>少了孤独,平淡</p>
+        <p>多了热闹,开心</p>
+        <p>更多了一份责任</p>
+        <p>记得第一次看你相片时发自内心的欢喜</p>
+        <p>记得给你发第一份信时的期待</p>
+        <p>记得第一次要见你时的激动</p>
+        <p>记得那晚不顾一切的想要见到你的疯狂</p>
+        <p>记得那晚次日见而不得的伤心失落</p>
+        <p>或许</p>
+        <p>是与你无缘</p>
+        <p>第一次尝到了那种从未有过的心痛感觉</p>
+        <p>我又回到从前</p>
+        <p>无目的的,继续忙碌着</p>
+        <p>以为</p>
+        <p>也许就这样了</p>
+        <p>于是</p>
+        <p>虽然我们未曾真正见过一面</p>
+        <p>但</p>
+        <p>我还是要试着努力慢慢的忘记你</p>
+        <p>然而</p>
+        <p>以后的几个月的时间里</p>
+        <p>时不时的还会梦见你</p>
+        <p>想起和你微信里说过的话,开过的玩笑</p>
+        <p>因为</p>
+        <p>我的脑海已有你的烙印</p>
+        <br/>
+        <p>......</p>
+        <br/>
+        <p>直到</p>
+        <p><strong>你</strong><p>
+        <p>再次出现在我的生活里</p>
+        <p>残存的记忆,依如初,又清晰了起来</p>
+        <p>美好的东西,都要经历波折的洗礼</p>
+        <p>也许那样我们才会懂得什么是珍惜与宝贵</p>
+        <p>我知道一直以来我都做得不好</p>
+        <p>对不起</p>
+        <p>请原谅我苍白的经历</p>
+        <p>就像你说的,有好多事是我这样的人不明白的</p>
+        <p>但,我也在努力的去成长</p>
+        <p>拥有的很少,但想给予你的好多</p>
+        <p>请给我点时间</p>
+        <p>也谢谢一直以来你对我的包容</p>
+        <p>过去的就过去吧</p>
+        <p>我希望此后的日子里</p>
+        <p>由我牵着你的手,一直走下去</p>
+        <p>未来,那么远又这么近</p>
+        <p>时光总比忙碌的生活跑得快</p>
+        <p>也许以后我们还会吵闹拌嘴</p>
+        <p>但我相信我们会愈加和谐</p>
+        <p>罗嗦了一堆,其实我只想说的是:</p>
+        <p><span class="speak-love">我爱你</span></p>
+        <br/>
+        <p class="post-end">爱你的<span class="me">军儿</span>  ^_^</p>
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var d = document.body;
+            var $d = $("#animate-code");
+            var string = $("#animate-code").html();
+            string.replace("/\n/","");
+            $d.empty();
+            var progress = 0;
+            var length = string.length;
+            var tid;
+            function type() {
+                var ch = string.substr(progress, 1);
+                if (ch == "<") {
+                    progress = string.indexOf(">", progress) + 1;
+                } else {
+                    progress++;
+                    if (/\s/.test(ch)) {
+                        clearTimeout(tid);
+
+                        type();
+                        return;
+                    }
+                }
+
+                $d.html($.trim(string.substring(0, progress)+(progress & 1 ? "|" : "")));
+                if(d.clientHeight < d.scrollHeight){
+
+                    d.scrollTop += d.scrollHeight- d.clientHeight+100
+                }
+                if (length <= progress) {
+                    var c = $d[0];
+                    clearTimeout(tid);
+                }else{
+                    tid = setTimeout(type , 10);
+                }
+            }
+            type();
+        });
+    </script>
+</body>
+</html>
