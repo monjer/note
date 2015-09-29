@@ -62,6 +62,7 @@ _index.html_的内容为
 现在可以打开_index.html_,可以查看运行结果。不出意外，浏览器会弹出显示信息的alert框。现在使用compiler.jar对_app.js_进行压缩。
 打开命令行工具，切换到_js_目录下，输入并运行以下命令
 
+	$ cd js
 	$ java -jar compiler.jar   --js ./app/app.js --js_output_file ./app/app.min.js
 	
 其中，`--js`选项后面指定的带压缩的文件名称，`--js_output_file`选项指定了压缩后输出文件的路径和名称。
@@ -78,7 +79,7 @@ _index.html_的内容为
 
 	var app={boot:function(){app.sayHello("Closure Compiler application ")},sayHello:function(a){alert(a+" say :hello world")}};app.boot();
 	
-可见源文件的空白行，以及所有注释都被移除，此外，`boot`方法中的`compiler`变量也被删除儿直接将其值传入到`app.boot`方法的参数中，同时，`sayHello`方法的名为`who`的参数被替换为了更短的`a`。但对象名称(`app`)和方法名称(`boot`,`sayHello`)并没有变化。
+可见源文件的空白行，以及所有注释都被移除，此外，`boot`方法中的`compiler`变量也被删除而直接将其值传入到`app.boot`方法的参数中，同时，`sayHello`方法的名为`who`的参数被替换为了更短的`a`。但对象名称(`app`)和方法名称(`boot`,`sayHello`)并没有变化。
 
 修改_index.html_,
 
@@ -119,11 +120,11 @@ _index.html_的内容为
 
 	app-->
 		view-->
-			.js
+			*.js
 		modle-->
-			.js
+			*.js
 		common-->
-			.js
+			*.js
 使用上述的命令的优势就更明显了，而且我们也可以选择压缩指定多个目录下js文件，如
 
 	$ java -jar compiler.jar   --js ./app/view/**.js --js ./app/modle/**.js --js_output_file ./app/app.min.js	
