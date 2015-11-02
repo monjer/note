@@ -1,6 +1,6 @@
 ### 使用text-overflow处理文本截断
 
-#### `text-overflow`说明
+### `text-overflow`说明
 
 Web页面在**定宽**的容器中有时需要显示单行的文本（例如标题），同时需要在文本过长时能够将超出的部分进行省略或剪切，在CSS中可以使用`text-overflow`属性来达到此效果。
 
@@ -30,7 +30,7 @@ CSS的`text-overflow`属性决定了溢出的文本内容显示方式，可以�
 		text-overflow: clip;
 	}
 
-#### 示例
+### 示例
 
 以示例说明，CSS样式如下
 
@@ -77,7 +77,7 @@ HTML代码片段如下：
 ![text-overflow](1.1.png)
 
 
-#### 兼容性问题
+### 兼容性问题
 
 基本上所有的浏览器都已经实现该属性,参见 [Web Platform : text-overflow][ref-6] 说明。但Opera 9和10 需要添加前缀`-o-`,完整的属性名称为`-o-text-overflow`。以`.text-clip`样式为例，完整的写法为
 
@@ -99,6 +99,35 @@ HTML代码片段如下：
 >		}
 >
 
+###嵌套问题
+
+如果在一个块级元素设置了文本截断属性，那么要得到想要的效果，**那么其内部的内容溢出必须是文本溢出或者是内敛元素嵌套的文本溢出**，块级元素嵌套块级元素的设置不会达到预期效果。示例如下
+
+html代码：
+
+	<div class="box">
+		This is a long text content.This is a long text content.This is a long text content.This is a long text content.This is a long text content.
+	</div>
+	<div class="box">
+		<span>This is a long text content.This is a long text content.This is a long text content.This is along text content.This is a long text content.</span>
+	</div>
+	<div class="box">
+		<div>This is a long text content.This is a long text content.This is a long text content.This is a long text content.This is a long text content.
+		</div>
+	</div>
+css代码：
+
+	.box{
+    	width:400px;
+	    white-space: nowrap;
+    	overflow: hidden;              
+	    text-overflow:    ellipsis;
+    	border:1px solid #ccc;
+	}
+	
+实际的显示效果	
+
+![result](2.png)
 
 #### 参考
 
