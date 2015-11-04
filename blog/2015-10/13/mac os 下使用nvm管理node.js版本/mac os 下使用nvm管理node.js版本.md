@@ -84,7 +84,7 @@ nvm依赖于C++的编译器，对于Mac OS X来说，使用XCode的Common Line T
 4. 切换使用指定版本号的Node.js		
 
 		$ nvm use 0.12.7
-5. 查看当前所使用的Node.js的PATH
+5. 查看当前所使用的Node.js的版本
 
 		$ nvm current	
 			
