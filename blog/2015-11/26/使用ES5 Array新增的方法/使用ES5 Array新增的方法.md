@@ -64,7 +64,7 @@ ECMAScript 5.1版本在2011年6月被ECMA组织批准通过,并定义了一系�
         	var n = opt_fromIndex ;
 	        n = (n == undefined || typeof n !== 'number' ) ? length - 1 : n ;
     	    if(n >= 0 ){
-        	    n = Math.min(n , length -1)
+        	    n = Math.min(n , length -1);
 	        }else{
     	        n = length - Math.abs(n);
         	}
@@ -106,7 +106,7 @@ ECMAScript 5.1版本在2011年6月被ECMA组织批准通过,并定义了一系�
 	        var length = this.length ;
     	    for(var n = 0; n < length ; n++){
         	    if(callback.apply(opt_thisArg  , [this[n] , n , this])){
-            	    res.push(this[n])
+            	    res.push(this[n]);
 	            }
     	    }
         	return res ;
