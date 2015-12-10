@@ -125,7 +125,8 @@
 		}
 	要求
 	1. 定位元素为绝对布局,`position:absolute;`并且`top:0;bottom:0`,之后设置其`margin-top:auto;margin-bottom:auto;`
-	2. 父元素需要是定位元素
+	2. 定位元素需要高度固定
+	3. 父元素需要是定位元素
 	
 	适用于单个元素对齐，不限高度
 	
