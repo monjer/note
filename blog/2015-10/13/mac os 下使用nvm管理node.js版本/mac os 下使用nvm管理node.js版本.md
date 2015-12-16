@@ -103,6 +103,15 @@ nvm依赖于C++的编译器，对于Mac OS X来说，使用XCode的Common Line T
 9. 切换到系统安装的Node.js
 
 		$ nvm use system
+
+10. 恢复使用`PATH`变量指定的node（通常是使用安装包安装的node版本）
+
+		$ nvm deactivate
+		
+11. 为所有打开的终端设置默认的node版本
+
+		$ nvm alias default 0.12.7
+
 10. 卸载指定版本的Node.js
 
 		$ nvm uninstall 0.12.7

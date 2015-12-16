@@ -56,7 +56,7 @@ Node.js是基于Chrome V8的javascript运行时，特点：单线程，异步驱
 	
 	lsbom -f -l -s -pf /var/db/receipts/org.nodejs.pkg.bom | while read i; do \
     sudo rm /usr/local/${i} \
-	done \
+	done 
 	
 	sudo rm -rf /usr/local/lib/node 
     sudo rm -rf /usr/local/lib/node_modules 
@@ -64,6 +64,8 @@ Node.js是基于Chrome V8的javascript运行时，特点：单线程，异步驱
 	sudo rm -rf /usr/local/share/man/man1/node.1
 	sudo rm -rf /usr/local/lib/dtrace/node.d
 	sudo rm -rf ~/.npm
+	sudo rm -rf/usr/local/bin/node
+	sudo rm -rf/usr/local/bin/npm
 	
 通过以上命令行，可以清除nodejs以及npm。
 
