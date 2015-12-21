@@ -261,7 +261,9 @@ btn.addEventListener('click'/home/manjunhan/WebstormProjects/note
  * @param index {number} 当前元素的索引
  * @param arrItem {object} 当前数组元素
  */
-var callback = function(index , arrItem){ - // this == arrItem - };
+var callback = function(index , arrItem){
+     // this == arrItem
+ };
 
 $.each(array , callback);
 ```
@@ -270,8 +272,13 @@ $.each(array , callback);
 
 ```
 
-/** - @param key {string} 当前元素的属性名称 - @param value {object} 当前属性对应的值 - */ - var callback = function(key , vlaue){ - // this == value - }
-
+/**
+ * @param key {string} 当前元素的属性名称
+ * @param value {object} 当前属性对应的值
+ */
+var callback = function(key , vlaue){
+    // this == value
+}
 $.each(object , callback);
 ```
 
@@ -285,17 +292,25 @@ $.each(object , callback);
 
 ```
 
-/** - @param arrItem {object} 当前数组元素 - @param index {number} 当前元素的索引  
-- */ - var callback = function(arrItem , index){
+/**
+ * @param arrItem {object} 当前数组元素
+ * @param index {number} 当前元素的索引  
+ */
+var callback = function(arrItem , index){
 
-}; var resArr = $.map(array , callback);
+};
+var resArr = $.map(array , callback);
 ```
 
 遍历对象调用形式
 
 ```
 
-/** - @param value {object} 当前属性对应的值 - @param key {string} 当前元素的属性名称 - */ - var callback = function(vlaue , key ){
+/**
+ * @param value {object} 当前属性对应的值
+ * @param key {string} 当前元素的属性名称 -
+ */
+var callback = function(vlaue , key ){
 
 }
 
@@ -306,14 +321,22 @@ var resArr = $.map(object , callback);
 
 ```
 
-var arr = [1, 2, 3, 4]; var resArr = $.map(arr , function(item , index ){ return index%2 == 0 ? null : item }); console.log(resArr); // [2, 4]
+var arr = [1, 2, 3, 4];
+ var resArr = $.map(arr , function(item , index ){
+     return index%2 == 0 ? null : item
+});
+console.log(resArr); // [2, 4]
 ```
 
 - 返回值数组的话，数组的元素会被压缩到最终的数组中
 
 ```
 
-var arr = [1, 2, 3, 4]; var resArr = $.map(arr , function(item , index ){ return [item , item+1]; }); console.log(resArr); // [1, 2, 2, 3, 3, 4, 4, 5]
+var arr = [1, 2, 3, 4];
+var resArr = $.map(arr , function(item , index ){
+     return [item , item+1];
+});
+ console.log(resArr); // [1, 2, 2, 3, 3, 4, 4, 5]
 ```
 
 **$.merge(first , second)**
@@ -324,7 +347,9 @@ var arr = [1, 2, 3, 4]; var resArr = $.map(arr , function(item , index ){ return
 
 var first = [1, 2] ; var second = [3, 4];
 
-var res = $.merge(first , second); console.log(res); //[1, 2, 3, 4]; console.log(res == first) // true
+var res = $.merge(first , second);
+console.log(res); //[1, 2, 3, 4];
+console.log(res == first) // true
 ```
 
 调用`$.merge(first , second)`后第一个参数对象会被修改，如果需要使用原对象，首先进行复制操作，`$.merge()`本身可以完成复制操作，如
@@ -340,7 +365,10 @@ var origin = $.merge([] , first);
 
 ```
 
-var arr = [1, 2, 3, 4]; var resArr = $.grep(arr , function(index , item){ return item%2 == 0 ; });
+var arr = [1, 2, 3, 4];
+var resArr = $.grep(arr , function(index , item){
+    return item%2 == 0 ;
+});
 
 console.log(resArr); // [2, 4]
 ```
@@ -358,15 +386,21 @@ console.log(resArr); // [2, 4]
 生成并返回一个空函数，函数本身不干任何事儿。在编写jQuery插件时，可以生成可选参数callback的默认值。
 
 ```
+(function($){
+    /**
+     * popup 插件*
+     * opt {object} plugin选项*
+     * opt.onShow {function} popup显示的回调
+     * opt.onHide {function} popup关闭的回调
+     */
+     $.fn.popup = function(opt){
+         opt = $.extend({
+                      onShow:$.noop(),
+                      onHide:$.noop()
+                   },opt);
 
-(function($){ /**
+         // to do
+    }
+
+})(jQuery);
 ```
-
-- popup 插件*
-- opt {object} plugin选项*
-- opt.onShow {function} popup显示的回调
-- opt.onHide {function} popup关闭的回调*/ $.fn.popup = function(opt){ opt = $.extend({ onShow:$.noop(), onHide:$.noop() },opt);
-
-// to do }```
-
-})(jQuery); ```
