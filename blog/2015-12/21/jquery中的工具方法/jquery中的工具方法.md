@@ -1,68 +1,68 @@
-###jQuery中的工具方法
+### jQuery中的工具方法
 
-####类型判断
+
+#### 类型判断
 
 **$.type(obj)**
 
 返回一个字符串，判断对象obj所属的javascript对象类型,类型字符串包括`"undefined""`，`"null"`，，`"number"`，`"boolean"`，`"string"`，`"function"`，`"array"`，`"date"`,，`"error"`，`"regexp"`，`"object"`
 
-```
-$.type("");             // string
-$.type(true);           // boolean
-$.type(null);           // null
-$.type(undefined);      // undefined
-$.type({});             // object
-$.type(123);            // number
-$.type(function(){});   // function
-$.type(new Date());     // date
-$.type(/\s/);           // regexp       
-$.type(new Error());    // error
-$.type([]);             // array
-```
+
+    $.type("");             // string
+    $.type(true);           // boolean
+    $.type(null);           // null
+    $.type(undefined);      // undefined
+    $.type({});             // object
+    $.type(123);            // number
+    $.type(function(){});   // function
+    $.type(new Date());     // date
+    $.type(/\s/);           // regexp
+    $.type(new Error());    // error
+    $.type([]);             // array
+
 
 **$.isFunction(obj)**
 
 返回布尔值，判断一个对象是否是函数类型
 
-```
-$.isFunction(function(){}); // true
-$.isFunction({});           // false
-```
+
+    $.isFunction(function(){}); // true
+    $.isFunction({});           // false
+
 
 **$.isArray(obj)**
 
 返回布尔值，判断一个对象是否是数组类型
 
-```
-$.isArray([]);  // true
-$.isArray({});  // false
-```
+
+    $.isArray([]);  // true
+    $.isArray({});  // false
 
 **$.isNumeric(value)**
 
 返回布尔值，判断传入的参数是否可以转换为数字
 
-```
-$.isNumeric(0xAA);          // true
-$.isNumeric(123);           // true
-$.isNumeric("123");         // true
-$.isNumeric("");            // false
-$.isNumeric({});            // false (empty object)
-$.isNumeric(NaN);           // false
-$.isNumeric(null);          // false
-$.isNumeric(true);          // false
-$.isNumeric(Infinity);      // false
-$.isNumeric(undefined);     // false
-```
+
+    $.isNumeric(0xAA);          // true
+    $.isNumeric(123);           // true
+    $.isNumeric("123");         // true
+    $.isNumeric("");            // false
+    $.isNumeric({});            // false (empty object)
+    $.isNumeric(NaN);           // false
+    $.isNumeric(null);          // false
+    $.isNumeric(true);          // false
+    $.isNumeric(Infinity);      // false
+    $.isNumeric(undefined);     // false
+
 
 **$.isEmeptyObject(obj)**
 
 返回布尔值，判断传入的对象是否是空对象
 
-```
-$.isEmptyObject({});            // true
-$.isEmptyObject({pro:'value'}); // false
-```
+
+    $.isEmptyObject({});            // true
+    $.isEmptyObject({pro:'value'}); // false
+
 
 > 该方法会遍历对象本身以及继承自原型链中的属性(及不使用`hasOwnProperty`方法实现)，`obj`参数应该是plain javascript`Object`对象(其他类型对象，如DOM对象，宿主对象，字符串或树脂对象存在跨浏览器问题)。
 
@@ -70,39 +70,38 @@ $.isEmptyObject({pro:'value'}); // false
 
 返回布尔值，判断传入的对象是否是plain对象（即通过对象字面量`{}`或`new Object()`创建的对象） > 与$.isEmptyObject的不同参见[☞](http://stackoverflow.com/questions/5773723/difference-between-jquery-isplainobject-and-jquery-isemptyobject/5773738#5773738)
 
-```
-$.isPlainObjecy({}); // true
-$.isPlainObjecy(""); // false
-```
+
+    $.isPlainObjecy({}); // true
+    $.isPlainObjecy(""); // false
+
 
 **$.isWindow(obj)**;
 
 返回布尔值，判断对象是否是`window`对象
 
-```
-$.isWindow(top);        // true
-$.isWindow(window);     // true
-$.isWindow(document);   // false
-```
+
+    $.isWindow(top);        // true
+    $.isWindow(window);     // true
+    $.isWindow(document);   // false
+
 
 **$.isXMLDoc(node)**
 
 返回布尔值，判断DOM node是否是XML Document或者在XML文档内
 
-```
-$.isXMLDoc(document);  // false
-```
 
-####操作数组
+    $.isXMLDoc(document);  // false
+
+
+#### 操作数组
 
 **$.inArray(value , array [, fromIndex])**
 
 判读指定的`value`值是否存在当前的数组`array`中，如果存在返回其数组索引，否则返回`-1` ，可以在给定的起始索引`fromIndex`(默认为`0`)出进行查找。
 
-```
-$.inArray(1,[2, 1, 3]) ;  // 1
-$.inArray(4,[2, 1, 3]) ;  // -1
-```
+
+    $.inArray(1,[2, 1, 3]) ;  // 1
+    $.inArray(4,[2, 1, 3]) ;  // -1
 
 **$.makeArray(obj)**
 
@@ -110,83 +109,82 @@ $.inArray(4,[2, 1, 3]) ;  // -1
 
 **demo-1**
 
-```
-<!-- html -->
 
-<div id="list">
-    <div>A</div>
-    <div>B</div>
-    <div>C</div>
-    <div>D</div>
-</div>
+    <!-- html -->
 
-// script
-var list = document.getElementById('list);
-var els = list.getElementsByTagName('div') ;
-var arr = $.makeArray(els) ;
-arr.reverse();
-$(arr).append($('#list'));
+    <div id="list">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+    </div>
 
-// output html
+    // script
+    var list = document.getElementById('list);
+    var els = list.getElementsByTagName('div') ;
+    var arr = $.makeArray(els) ;
+    arr.reverse();
+    $(arr).append($('#list'));
 
-<div id="list">
-    <div>D</div>
-    <div>C</div>
-    <div>B</div>
-    <div>A</div>
-</div>
-```
+    // output html
+
+    <div id="list">
+        <div>D</div>
+        <div>C</div>
+        <div>B</div>
+        <div>A</div>
+    </div>
+
+
 
 **demo-2**
 
-```
-var $els = $("div");
-var arr = $.makeArray($els); // dom node array
-```
+    var $els = $("div");
+    var arr = $.makeArray($els); // dom node array
 
-####字符串
+
+#### 字符串
 
 **$.trim(str)**
 
 删除字符串`str`收尾的空白字符并返回新的字符串。
 
-```
-var str = "  123321  " ;
-str = $.trim(str) ;
-console.log(str);       // "123321"
-```
+
+    var str = "  123321  " ;
+    str = $.trim(str) ;
+    console.log(str);       // "123321"
+
 
 **$.parseJSON(json)**
 
 转换JSON字符串为JSON对象并返回。
 
-```
-var string = "{"name":"manjun.han"}";
-var user = $.parseJSON(string);
-console.log(user.name); // manjun.han
-```
+    var string = "{"name":"manjun.han"}";
+    var user = $.parseJSON(string);
+    console.log(user.name); // manjun.han
+
 
 **$.parseHTML(html [,context][, keepScript])**
 
 将HTML字符串转换为DOM nodes对象并返回，可选参数，**_context_**，指定DOM nodes的上下文对象，默认为`document`；**_keepScripts_**，是否解析script标签，默认为`false`。
 
-```
-var html = "<div><span>html string snippet.</span></div>" ;
-var node = $.parseHTML(html);
-$("body").append(node);
-```
+
+    var html = "<div><span>html string snippet.</span></div>" ;
+    var node = $.parseHTML(html);
+    $("body").append(node);
+
 
 **$.parseXML(data)**
 
 将字符串转换为XML 文档。该方法使用浏览器内置的api来创建一个合法的XML文档，返回的节点对象可以使用传入jQuery中，进行遍历和操作。
 
-```
-var xml = "<div><span>Text Node</span></div>" ;
-var $xml = $(xml);
-console.log($xml.find('span')); // [<span>Text Node</span>]
-```
 
-####函数
+    var xml = "<div><span>Text Node</span></div>" ;
+    var $xml = $(xml);
+    console.log($xml.find('span')); // [<span>Text Node</span>]
+
+
+#### 函数
 
 **$.proxy(function , context[, otherArguments])**
 
@@ -194,40 +192,40 @@ console.log($xml.find('span')); // [<span>Text Node</span>]
 
 > 这个过程及[函数柯里化](http://www.sitepoint.com/currying-in-functional-javascript/)
 
-```
-<!-- html -->
 
-<button id="who">Tomcat ?</button>
+    <!-- html -->
 
-// script
+    <button id="who">Tomcat ?</button>
 
-var tomcat = {
-    name:'tomcat',
-    hi:function(){
-        alert('Hi, i am'+this.name);
-    }
-};
+    // script
 
-tomcat.hi = $.proxy(tomcat.hi , tomcat) ;
+    var tomcat = {
+        name:'tomcat',
+        hi:function(){
+            alert('Hi, i am'+this.name);
+        }
+    };
 
-var btn = document.getElementById('who') ;
-btn.addEventListener('click'/home/manjunhan/WebstormProjects/note
-```
+    tomcat.hi = $.proxy(tomcat.hi , tomcat) ;
+
+    var btn = document.getElementById('who') ;
+    btn.addEventListener('click'/home/manjunhan/WebstormProjects/note
+
 
 `$.proxy(context , methodName[, otherArguments])`
 
-####快捷工具
+#### 快捷工具
 
 **$.extend()** - **$.extend(target,object[,object11][,objectN])**
 
 对象合并，合并一个或多个对象的属性到第一个对象中去。可以对象的拷贝操作。
 
-```
-  var target = {name:'tomcat'} ;
-  var object = {age:2};
-  $.extend(target , object);
-  console.log(target);            // {name:'tomcat' , age:2}
-```
+
+    var target = {name:'tomcat'} ;
+    var object = {age:2};
+    $.extend(target , object);
+    console.log(target);            // {name:'tomcat' , age:2}
+
 
 - **$.extend(deep , target,object[,object11][,objectN])**
 
@@ -235,19 +233,18 @@ btn.addEventListener('click'/home/manjunhan/WebstormProjects/note
 
 合并对象`object`的所有属性到`jQuery`对象上去,可以用来扩展`jQuery`对象，通常用来编写jQuery的插件。
 
-```
 
-  $.extend({
+    $.extend({
 
-    newPlugin:function(){
+        newPlugin:function(){
 
-    console.log("Just another new plugin");
-    }
+            console.log("Just another new plugin");
+        }
 
-  });
+    });
 
     $.newPlugin(); // Just another new plugin
-```
+
 
 **$.each(array/object , callback)**
 
@@ -255,32 +252,29 @@ btn.addEventListener('click'/home/manjunhan/WebstormProjects/note
 
 遍历数组调用形式如下
 
-```
 
-/**
- * @param index {number} 当前元素的索引
- * @param arrItem {object} 当前数组元素
- */
-var callback = function(index , arrItem){
-     // this == arrItem
- };
+    /**
+     * @param index {number} 当前元素的索引
+     * @param arrItem {object} 当前数组元素
+     */
+    var callback = function(index , arrItem){
+         // this == arrItem
+     };
 
-$.each(array , callback);
-```
+    $.each(array , callback);
+
 
 遍历对象调用形式如下
 
-```
+    /**
+     * @param key {string} 当前元素的属性名称
+     * @param value {object} 当前属性对应的值
+     */
+    var callback = function(key , vlaue){
+        // this == value
+    }
+    $.each(object , callback);
 
-/**
- * @param key {string} 当前元素的属性名称
- * @param value {object} 当前属性对应的值
- */
-var callback = function(key , vlaue){
-    // this == value
-}
-$.each(object , callback);
-```
 
 **$.map(array/object , callback)**
 
@@ -290,92 +284,105 @@ $.each(object , callback);
 
 遍历数组调用形式：
 
-```
 
-/**
- * @param arrItem {object} 当前数组元素
- * @param index {number} 当前元素的索引  
- */
-var callback = function(arrItem , index){
 
-};
-var resArr = $.map(array , callback);
-```
+    /**
+     * @param arrItem {object} 当前数组元素
+     * @param index {number} 当前元素的索引  
+     */
+    var callback = function(arrItem , index){
+
+    };
+    var resArr = $.map(array , callback);
+
 
 遍历对象调用形式
 
-```
+    /**
+     * @param value {object} 当前属性对应的值
+     * @param key {string} 当前元素的属性名称 -
+     */
+    var callback = function(vlaue , key ){
 
-/**
- * @param value {object} 当前属性对应的值
- * @param key {string} 当前元素的属性名称 -
- */
-var callback = function(vlaue , key ){
+    }
 
-}
+    var resArr = $.map(object , callback);
 
-var resArr = $.map(object , callback);
-```
 
 对于`callback`需要注意的是： - `this`指向的是全局对象`window` - 返回`null`或`undefined`值，会删除当前的值
 
-```
 
-var arr = [1, 2, 3, 4];
- var resArr = $.map(arr , function(item , index ){
-     return index%2 == 0 ? null : item
-});
-console.log(resArr); // [2, 4]
-```
+    var arr = [1, 2, 3, 4];
+     var resArr = $.map(arr , function(item , index ){
+         return index%2 == 0 ? null : item
+    });
+    console.log(resArr); // [2, 4]
 
-- 返回值数组的话，数组的元素会被压缩到最终的数组中
 
-```
+返回值数组的话，数组的元素会被压缩到最终的数组中
 
-var arr = [1, 2, 3, 4];
-var resArr = $.map(arr , function(item , index ){
-     return [item , item+1];
-});
- console.log(resArr); // [1, 2, 2, 3, 3, 4, 4, 5]
-```
+
+    var arr = [1, 2, 3, 4];
+    var resArr = $.map(arr , function(item , index ){
+         return [item , item+1];
+    });
+    console.log(resArr); // [1, 2, 2, 3, 3, 4, 4, 5]
+
 
 **$.merge(first , second)**
 
 将两个数组(或_array-like_对象)的内容合并到第一个当中，并返回第一个数组。
 
-```
 
-var first = [1, 2] ; var second = [3, 4];
+    var first = [1, 2] ; var second = [3, 4];
 
-var res = $.merge(first , second);
-console.log(res); //[1, 2, 3, 4];
-console.log(res == first) // true
-```
+    var res = $.merge(first , second);
+    console.log(res); //[1, 2, 3, 4];
+    console.log(res == first) // true
+
 
 调用`$.merge(first , second)`后第一个参数对象会被修改，如果需要使用原对象，首先进行复制操作，`$.merge()`本身可以完成复制操作，如
 
-```
-
-var origin = $.merge([] , first);
-```
+    var origin = $.merge([] , first);
 
 **$.grep(array , filterFun [,ivert])**
 
-遍历数组或者_array-like_对象，查找并返回由满足条件的元素组成的数组。`$.grep()`函数会在每个元素上调用`filterFun`，只有返回`true`值的元素才会被保留。`filterFun`函数的第一个参数为元素索引，第二个参数为当前元素，`this`指向的时全局对象window。`$.grep()`可以用来执行用来过滤满足特殊条件的元素的操作。
+遍历数组或者 _array-like_ 对象，查找并返回由满足条件的元素组成的数组。`$.grep()`函数会在每个元素上调用`filterFun`，只有返回`true`值的元素才会被保留。`filterFun`函数的第一个参数为元素索引，第二个参数为当前元素，`this`指向的时全局对象window。`$.grep()`可以用来执行用来过滤满足特殊条件的元素的操作。
 
-```
 
-var arr = [1, 2, 3, 4];
-var resArr = $.grep(arr , function(index , item){
-    return item%2 == 0 ;
-});
+    var arr = [1, 2, 3, 4];
+    var resArr = $.grep(arr , function(index , item){
+        return item % 2 == 0 ;
+    });
 
-console.log(resArr); // [2, 4]
-```
+    console.log(resArr); // [2, 4]
 
-####数据缓存
 
-####其它
+#### 数据缓存
+
+#### DOM
+
+**$.contains(container , contained)**
+
+返回一个布尔值，检测一个DOM对象是否是另一个的后代，第一个参数为祖先对象，第二个参数为子孙对象。
+
+如果第二个参数指定的DOM元素是第一个参数指定DOM元素的后代，`$.contains()`返回`true`。
+
+	<!-- html -->
+	<div id="list">
+		<div id="item-1"></div>
+		<div id="item-2"></div>		
+	</div>
+	
+	// script
+	var list = document.getElementById('list') ;
+	var item1 = document.getElementById('item-1')
+	var contained = $.contains(list , item1);
+	console.log(contained); // true
+
+
+
+#### 其它
 
 **$.now()**
 
@@ -385,22 +392,21 @@ console.log(resArr); // [2, 4]
 
 生成并返回一个空函数，函数本身不干任何事儿。在编写jQuery插件时，可以生成可选参数callback的默认值。
 
-```
-(function($){
-    /**
-     * popup 插件*
-     * opt {object} plugin选项*
-     * opt.onShow {function} popup显示的回调
-     * opt.onHide {function} popup关闭的回调
-     */
-     $.fn.popup = function(opt){
-         opt = $.extend({
-                      onShow:$.noop(),
-                      onHide:$.noop()
-                   },opt);
 
-         // to do
-    }
+    (function($){
+        /**
+         * popup 插件*
+         * opt {object} plugin选项*
+         * opt.onShow {function} popup显示的回调
+         * opt.onHide {function} popup关闭的回调
+         */
+         $.fn.popup = function(opt){
+             opt = $.extend({
+                          onShow:$.noop(),
+                          onHide:$.noop()
+                       },opt);
 
-})(jQuery);
-```
+             // to do
+        }
+
+    })(jQuery);
