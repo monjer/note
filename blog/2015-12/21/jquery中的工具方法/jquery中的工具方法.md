@@ -220,12 +220,12 @@
 
 对象合并，合并一个或多个对象的属性到第一个对象中去。可以对象的拷贝操作。
 
-
-    var target = {name:'tomcat'} ;
-    var object = {age:2};
-    $.extend(target , object);
-    console.log(target);            // {name:'tomcat' , age:2}
-
+```
+var target = {name:'tomcat'} ;
+var object = {age:2};
+$.extend(target , object);
+console.log(target);            // {name:'tomcat' , age:2}
+```
 
 - **$.extend(deep , target,object[,object11][,objectN])**
 
@@ -240,7 +240,6 @@
 
             console.log("Just another new plugin");
         }
-
     });
 
     $.newPlugin(); // Just another new plugin
@@ -384,14 +383,48 @@
 
 #### 其它
 
+**$.data(element , key , value)**
+
+在`element`元素上存储数据，其中`key`为数据的名称，`value`为出`undefined`之外的任何数据类型的值。
+
+```
+<!-- html -->
+<div id="uInfo">
+    <span>用户名</span><span class="u-name">monjer</span>
+    <span>用户名</span><span class="u-sex">男</span>
+</div>
+var $uInfo = $('#uInfo');
+var uInfo = {
+    id:1345,
+    name:'monjer',
+    sex:'男'
+} ;
+var uInfoEl = $uInfo[0] ;
+$.data( uInfoEl , 'uInfo' , data);
+```
+
+注意： - jQuery保证通过jQuery删除的DOM元素，与其关联的数据也会一并清掉。 - 通过该方可以为同一个DOM对象关联任意多个数据。 - 对于XML DOM对象，该方法存在跨平台问题，_Internet Explorer does not allow data to be attached via expando properties_。 - 该方法不能存储`undefined`值。 - 关联数据时，jQuery会保证阻止内存泄露和循环引用的发生。
+
+**$.data(element , key)**，**$.data(element)**
+
+获取与`element`元素关联的数据，这些数据通过`$.data(element , key , value)`存储并与element关联的。可指定`key`值，获取该名称下关联的数据，否则获取全部数据。
+
+```
+var uInfor = $.data(uInfoEl , 'uInfo');
+var allData = $.data(uInfoEl);
+```
+
+注意:jQuery使用`$.data()`方法在DOM元素上关联了一些供内部使用的数据，如事件处理,可以使用私有方法`$._data(element)`获取关联在DOM元素上的数据
+
+####其它
+
 **$.now()**
 
 返回代表当前时间的数值，等价于(new Date()).getTime();
 
 **$.noop()**
 
-生成并返回一个空函数，函数本身不干任何事儿。在编写jQuery插件时，可以生成可选参数callback的默认值。
-
+`$.noop`本身为一个空函数，函数本身不干任何事儿。在编写jQuery插件时，可以当作可选参数callback的默认值。
 
     (function($){
         /**
@@ -410,3 +443,15 @@
         }
 
     })(jQuery);
+
+**$.globalEval(code)**
+
+全局作用域下执行脚本代码，`code`参数为javascript脚本字符串。
+
+```
+function initSetting() {
+  jQuery.globalEval( "var newVar = true;" )
+}
+initSetting();
+console.log(newVar); // true
+```
