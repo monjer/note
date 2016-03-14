@@ -1,20 +1,25 @@
-Subline Text插件
+###Subline Text插件
 
-+ [AutoFileName][1]
-+ [All Autocomplete][2]
-+ [HTML-CSS-JS Prettify][3]
-+ [Bootstrap 3 Snippets][4]
-+ [jQuery][5]
-+ [Markdown Preview][6]
-+ [JSLint][7]
-+ [jQueryDocs][8]
-+ [BracketHighlighter][9]
-+ [Sass][10]
-+ [DocBlockr][11]
-+ [SCSS][12]
-+ [View In Browser][13]
-+ [CSS3][14]
-+ [Terminal][15]
+1. [AutoFileName][1]	
+2. [All Autocomplete][2]
+3. [HTML-CSS-JS Prettify][3]	
+4. [Bootstrap 3 Snippets][4]
+5. [jQuery][5]
+6. [Markdown Preview][6]
+7. [JSLint][7]
+8. [jQueryDocs][8]
+9. [BracketHighlighter][9]
+10. [Sass][10]
+11. [DocBlockr][11]
+12. [SCSS][12]
+14. [View In Browser][13]
+15. [CSS3][14]
+16. [Terminal][15]
+17. [Emmet][16]
+18. [Scss build][17]
+19. [ColorHighlighter][18]
+20. [Emmet Css Snippets][19]
+21. [Pretty JSON][20]
 
 [1]: https://github.com/BoundInCode/AutoFileName
 [2]: https://packagecontrol.io/packages/All%20Autocomplete
@@ -31,3 +36,8 @@ Subline Text插件
 [13]: https://packagecontrol.io/packages/View%20In%20Browser
 [14]: https://packagecontrol.io/packages/CSS3s
 [15]: https://packagecontrol.io/packages/Terminal
+[16]: https://packagecontrol.io/packages/Emmet
+[17]: https://packagecontrol.io/packages/SASS%20Build
+[18]: https://packagecontrol.io/packages/Color%20Highlighter
+[19]: https://packagecontrol.io/packages/Emmet%20Css%20Snippets
+[20]: https://packagecontrol.io/packages/Pretty%20JSON
